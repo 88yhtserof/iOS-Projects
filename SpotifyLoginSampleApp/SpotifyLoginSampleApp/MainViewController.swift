@@ -28,6 +28,14 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func tapSignOutButton(_ sender: UIButton) {
-        self.navigationController?.popViewController(animated: true)
+        //Firebase의 signOut 함수는 에러 처리를 위한 throw 함수이기 때문에 do try catch문 사용한다.
+        let firebaseAuth = Auth.auth()
+        do{
+            try firebaseAuth.signOut()
+            //오류가 발생하지 않는다면
+            self.navigationController?.popToRootViewController(animated: true)
+        }catch let signOutError as NSError {
+            print("ERROR: signOut \(signOutError)")
+        }
     }
 }
