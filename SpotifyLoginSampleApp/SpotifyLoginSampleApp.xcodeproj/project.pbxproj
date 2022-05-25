@@ -19,6 +19,7 @@
 		1405D0E6283CACA6006E51AD /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1405D0E5283CACA6006E51AD /* Login.storyboard */; };
 		14313392283DE98D00E3C7A3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14313391283DE98D00E3C7A3 /* GoogleService-Info.plist */; };
 		14313395283DF2A200E3C7A3 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 14313394283DF2A200E3C7A3 /* FirebaseAuth */; };
+		1431339E283E100700E3C7A3 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 1431339D283E100700E3C7A3 /* GoogleSignIn */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				14313395283DF2A200E3C7A3 /* FirebaseAuth in Frameworks */,
+				1431339E283E100700E3C7A3 /* GoogleSignIn in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,6 +104,7 @@
 			name = SpotifyLoginSampleApp;
 			packageProductDependencies = (
 				14313394283DF2A200E3C7A3 /* FirebaseAuth */,
+				1431339D283E100700E3C7A3 /* GoogleSignIn */,
 			);
 			productName = SpotifyLoginSampleApp;
 			productReference = 1405D0C5283C986C006E51AD /* SpotifyLoginSampleApp.app */;
@@ -133,6 +136,7 @@
 			mainGroup = 1405D0BC283C986C006E51AD;
 			packageReferences = (
 				14313393283DF2A200E3C7A3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				1431339C283E100700E3C7A3 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 			);
 			productRefGroup = 1405D0C6283C986C006E51AD /* Products */;
 			projectDirPath = "";
@@ -396,6 +400,14 @@
 				minimumVersion = 9.0.0;
 			};
 		};
+		1431339C283E100700E3C7A3 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -403,6 +415,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 14313393283DF2A200E3C7A3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAuth;
+		};
+		1431339D283E100700E3C7A3 /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1431339C283E100700E3C7A3 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
