@@ -17,6 +17,8 @@
 		1405D0E1283CA141006E51AD /* EnterEmail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1405D0E0283CA141006E51AD /* EnterEmail.storyboard */; };
 		1405D0E4283CAC70006E51AD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1405D0E3283CAC70006E51AD /* MainViewController.swift */; };
 		1405D0E6283CACA6006E51AD /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1405D0E5283CACA6006E51AD /* Login.storyboard */; };
+		14313392283DE98D00E3C7A3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14313391283DE98D00E3C7A3 /* GoogleService-Info.plist */; };
+		14313395283DF2A200E3C7A3 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 14313394283DF2A200E3C7A3 /* FirebaseAuth */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,7 @@
 		1405D0E0283CA141006E51AD /* EnterEmail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EnterEmail.storyboard; sourceTree = "<group>"; };
 		1405D0E3283CAC70006E51AD /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		1405D0E5283CACA6006E51AD /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		14313391283DE98D00E3C7A3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14313395283DF2A200E3C7A3 /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,6 +77,7 @@
 				1405D0D1283C986F006E51AD /* Assets.xcassets */,
 				1405D0D3283C986F006E51AD /* LaunchScreen.storyboard */,
 				1405D0D6283C986F006E51AD /* Info.plist */,
+				14313391283DE98D00E3C7A3 /* GoogleService-Info.plist */,
 				1405D0E3283CAC70006E51AD /* MainViewController.swift */,
 				1405D0E5283CACA6006E51AD /* Login.storyboard */,
 			);
@@ -95,6 +100,9 @@
 			dependencies = (
 			);
 			name = SpotifyLoginSampleApp;
+			packageProductDependencies = (
+				14313394283DF2A200E3C7A3 /* FirebaseAuth */,
+			);
 			productName = SpotifyLoginSampleApp;
 			productReference = 1405D0C5283C986C006E51AD /* SpotifyLoginSampleApp.app */;
 			productType = "com.apple.product-type.application";
@@ -123,6 +131,9 @@
 				Base,
 			);
 			mainGroup = 1405D0BC283C986C006E51AD;
+			packageReferences = (
+				14313393283DF2A200E3C7A3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 1405D0C6283C986C006E51AD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -142,6 +153,7 @@
 				1405D0E1283CA141006E51AD /* EnterEmail.storyboard in Resources */,
 				1405D0E6283CACA6006E51AD /* Login.storyboard in Resources */,
 				1405D0D0283C986C006E51AD /* Main.storyboard in Resources */,
+				14313392283DE98D00E3C7A3 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,6 +386,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		14313393283DF2A200E3C7A3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		14313394283DF2A200E3C7A3 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 14313393283DF2A200E3C7A3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1405D0BD283C986C006E51AD /* Project object */;
 }
