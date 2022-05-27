@@ -22,28 +22,45 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xcr-YQ-3WU">
-                                <rect key="frame" x="174" y="482" width="67" height="24"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="로그아웃">
-                                    <color key="titleColor" systemColor="systemGray6Color"/>
-                                </state>
-                                <connections>
-                                    <action selector="tapSignOutButton:" destination="FKr-HR-Acs" eventType="touchUpInside" id="7aM-Vl-swt"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="2gn-av-3l2">
+                                <rect key="frame" x="158" y="483" width="98" height="73"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xcr-YQ-3WU">
+                                        <rect key="frame" x="0.0" y="0.0" width="98" height="34"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="로그아웃">
+                                            <color key="titleColor" systemColor="systemGray6Color"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="tapSignOutButton:" destination="FKr-HR-Acs" eventType="touchUpInside" id="7aM-Vl-swt"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2lz-j0-Tdw">
+                                        <rect key="frame" x="0.0" y="39" width="98" height="34"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="비밀번호 변경">
+                                            <color key="titleColor" systemColor="systemGray6Color"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="tapResetPasswordButton:" destination="FKr-HR-Acs" eventType="touchUpInside" id="Jzk-dw-zxL"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="pMY-Mi-p1u"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Xcr-YQ-3WU" firstAttribute="centerX" secondItem="blI-ML-mi1" secondAttribute="centerX" id="OgO-GN-6QI"/>
+                            <constraint firstItem="2gn-av-3l2" firstAttribute="centerX" secondItem="blI-ML-mi1" secondAttribute="centerX" id="1TP-XH-f1r"/>
                             <constraint firstItem="blI-ML-mi1" firstAttribute="centerX" secondItem="Q8E-ru-vZL" secondAttribute="centerX" id="bzF-7Q-zS5"/>
-                            <constraint firstItem="Xcr-YQ-3WU" firstAttribute="top" secondItem="blI-ML-mi1" secondAttribute="bottom" constant="20" id="frC-Se-ph4"/>
+                            <constraint firstItem="2gn-av-3l2" firstAttribute="top" secondItem="blI-ML-mi1" secondAttribute="bottom" constant="20" id="icp-Ww-Hu4"/>
                             <constraint firstItem="blI-ML-mi1" firstAttribute="centerY" secondItem="Q8E-ru-vZL" secondAttribute="centerY" id="nX5-y9-nHc"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="resetPasswordButton" destination="2lz-j0-Tdw" id="aPj-wi-oTI"/>
                         <outlet property="welcomeLabel" destination="blI-ML-mi1" id="wb2-On-DbB"/>
                     </connections>
                 </viewController>
