@@ -53,4 +53,29 @@ class MainViewController: UIViewController {
             print("비밀번호 변경")
         })
     }
+    
+    @IBAction func tapProfileChangeButton(_ sender: UIButton) {
+        let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest() //프로필 데이터 수정할 수 있는 객체
+        
+        let alert = UIAlertController(title: "프로필 이름 설정", message: "이름을 입력하세요.", preferredStyle: .alert)
+        let action = UIAlertAction(title: "완료", style: .default){[weak self] _ in
+            guard let name = alert.textFields?[0].text else {return}
+            changeRequest?.displayName = name
+            
+            changeRequest?.commitChanges(){_ in //변경된 사항을 커밋한다.
+                let name = Auth.auth().currentUser?.displayName ?? Auth.auth().currentUser?.email ?? ""
+                self?.welcomeLabel.text = """
+    환영합니다.
+    \(name)님
+    """
+            }
+        }
+        
+        alert.addAction(action)
+        alert.addTextField{textField in
+            textField.placeholder = "이름을 입력하세요."
+        }
+        
+        present(alert, animated: true)
+    }
 }

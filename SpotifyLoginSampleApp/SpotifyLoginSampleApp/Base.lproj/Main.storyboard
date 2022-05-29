@@ -23,7 +23,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="2gn-av-3l2">
-                                <rect key="frame" x="158" y="483" width="98" height="73"/>
+                                <rect key="frame" x="158" y="483" width="98" height="112"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xcr-YQ-3WU">
                                         <rect key="frame" x="0.0" y="0.0" width="98" height="34"/>
@@ -45,6 +45,17 @@
                                         </state>
                                         <connections>
                                             <action selector="tapResetPasswordButton:" destination="FKr-HR-Acs" eventType="touchUpInside" id="Jzk-dw-zxL"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0JC-9m-IBB">
+                                        <rect key="frame" x="0.0" y="78" width="98" height="34"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="프로필 수정">
+                                            <color key="titleColor" systemColor="systemGray6Color"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="tapProfileChangeButton:" destination="FKr-HR-Acs" eventType="touchUpInside" id="lCi-QG-sPF"/>
                                         </connections>
                                     </button>
                                 </subviews>
