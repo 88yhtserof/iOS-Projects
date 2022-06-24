@@ -43,7 +43,7 @@
         <!--카드 혜택 상세-->
         <scene sceneID="Nqt-ye-11q">
             <objects>
-                <viewController id="atZ-ns-yoY" customClass="CardDetailViewController" customModule="CreditCardList" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CardDetailViewController" id="atZ-ns-yoY" customClass="CardDetailViewController" customModule="CreditCardList" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8gO-YM-trZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
