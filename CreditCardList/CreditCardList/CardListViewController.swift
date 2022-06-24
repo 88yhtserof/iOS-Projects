@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class CardListViewController: UITableViewController {
     /*
@@ -32,6 +33,10 @@ class CardListViewController: UITableViewController {
         cell.rankLabel.text = "\(creditCardList[indexPath.row].rank)위"
         cell.promotionLabel.text = "\(creditCardList[indexPath.row].promotionDetail.amount)만원 증정"
         cell.cardNameLabel.text = "\(creditCardList[indexPath.row].name)"
+        
+        //Kinkfisher를 사용해 URL 이미지 받아오기
+        let imageURL = URL(string: creditCardList[indexPath.row].cardImageURL)
+        cell.cardImageView.kf.setImage(with: imageURL)
         
         return cell
     }
