@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,6 +24,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="atZ-ns-yoY" kind="show" trigger="accessoryAction" id="hcl-Bj-eBv"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -35,6 +39,48 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D5H-dX-0VR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="905.79710144927549" y="96.428571428571431"/>
+        </scene>
+        <!--카드 혜택 상세-->
+        <scene sceneID="Nqt-ye-11q">
+            <objects>
+                <viewController id="atZ-ns-yoY" customClass="CardDetailViewController" customModule="CreditCardList" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8gO-YM-trZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="nlM-G9-SIp">
+                                <rect key="frame" x="20" y="331.5" width="374" height="287"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="신용카드 사용 시  0만원을 드려요." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fU8-pv-BkF">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="67"/>
+                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="28"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tCb-xe-Yvn">
+                                        <rect key="frame" x="0.0" y="87" width="374" height="200"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="200" id="Rza-iW-4Cq"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="UCF-x4-Qac"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="nlM-G9-SIp" firstAttribute="leading" secondItem="UCF-x4-Qac" secondAttribute="leading" constant="20" id="1nS-gw-rTx"/>
+                            <constraint firstItem="nlM-G9-SIp" firstAttribute="centerY" secondItem="UCF-x4-Qac" secondAttribute="centerY" id="EGK-XS-44B"/>
+                            <constraint firstItem="UCF-x4-Qac" firstAttribute="trailing" secondItem="nlM-G9-SIp" secondAttribute="trailing" constant="20" id="MFo-ys-nbw"/>
+                            <constraint firstItem="nlM-G9-SIp" firstAttribute="centerX" secondItem="UCF-x4-Qac" secondAttribute="centerX" id="nTm-x5-6za"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="카드 혜택 상세" id="SRS-L6-eIc"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vCH-cA-STk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1781" y="96"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ayI-Y1-7hC">
