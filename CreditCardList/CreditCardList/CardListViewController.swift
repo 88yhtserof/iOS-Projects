@@ -81,5 +81,31 @@ class CardListViewController: UITableViewController {
         
         cardDetailViewController.promotionDetail = creditCardList[indexPath.row].promotionDetail
         self.present(cardDetailViewController, animated: true)
+        
+        //카드 선택 여부 데이터베이스에 저장하기
+        //Option1
+        //데이터베이스에 경로, 즉 몇 번째 아이템인지 저장되어있으면 할당 쉬움
+        let cardID = creditCardList[indexPath.row].id
+        //ref.child("Item\(cardID)/isSelected") //데이터를 할당할 경로(Item\(cardID)아래 isSelected)를 찾고
+            //.setValue(true) //그 경로에 값 할당
+        
+        /*
+         데이터 구조에 따라 아이템 객체가 생성될 때마다 임의의 문자열 조합으로 저장하기도 한다.
+         서로 다른 데이터가 빠르게 생성될 때 id 중복을 막기 위해 그렇게 구현하기도 하는데,
+         문제는 어떤 id로 생성될 지 알 수 없기 때문에 객체가 생성된 다음에야 id를 알 수 있다.
+         따라서 우리가 코드를 작성하는 시점에는 id를 알 수 없다.
+         이럴 때는 갹채의 특정 컴포넌트를 검색해서 객체의 snapshot을 가져올 수도 있다.
+         Item0의 전체 키는 알 수 없지만(Item0이라는 이름이 아닌 임의의 문자열이 키일 수도), 이 객체의 고유한 값 즉 id로 이 객체를 검색해 가져올 수 있다.
+         */
+        //Option2
+        ref.queryOrdered(byChild: "id") //id라는 키값을 가진 쿼리 불러오기
+            .queryEqual(toValue: cardID) //cardID랑 값이 같은가?
+            .observe(.value) {[weak self] snapshot in //value 타입의 옵져버
+                guard let self = self,
+                      let value = snapshot.value as? [String : [String : Any]],
+                      let key = value.keys.first else {return}
+                
+                self.ref.child("\(key)/isSelected").setValue(true)
+            }
     }
 }

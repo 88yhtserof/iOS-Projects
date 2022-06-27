@@ -13,7 +13,7 @@ struct CreditCard: Codable {
     let name: String
     let cardImageURL: String
     let promotionDetail: promotionDetail
-    //let isSelected: Bool
+    let isSelected: Bool?
 }
 
 struct promotionDetail: Codable {
