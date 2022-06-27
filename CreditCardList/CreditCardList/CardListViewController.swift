@@ -108,4 +108,35 @@ class CardListViewController: UITableViewController {
                 self.ref.child("\(key)/isSelected").setValue(true)
             }
     }
+    
+    //테이블뷰 편집 가능하다고 알려주기
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    //편집 스타일 설정
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            //데이터 베이스 데이터 삭제하기
+            //Option1 경로를 알 경우
+            let cardID = creditCardList[indexPath.row].id
+//            ref.child("Item\(cardID)").removeValue()
+            
+            //Option2 경로를 모를 경우 -> 검색해서 찾기
+            ref.queryOrdered(byChild: "id") //id 키 값을 가진 쿼리
+                .queryEqual(toValue: cardID) //cardId와 같은 경우
+                .observe(.value) {[weak self] snapShot in //수신 대기할 이벤트 타입이 value 타입
+                    guard let self = self,
+                          let value = snapShot.value as? [String : [String:Any]], //snapShot의 valuesms array 값으로 전달된다.
+                          let key = value.keys.first else {return}
+                    //snapShot의 valuesms array 값으로 전달된다.
+                    //하지만 우리는 객체의 고유한 id값으로 검색해 snapshot을 받아왔기 때문에 array더라도 값이 하나뿐이다.
+                    
+                    self.ref.child(key).removeValue()
+                
+                
+            }
+            
+        }
+    }
 }
