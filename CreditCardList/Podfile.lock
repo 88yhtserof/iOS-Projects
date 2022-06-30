@@ -607,6 +607,9 @@ PODS:
   - Firebase/Database (9.2.0):
     - Firebase/CoreOnly
     - FirebaseDatabase (~> 9.2.0)
+  - Firebase/Firestore (9.2.0):
+    - Firebase/CoreOnly
+    - FirebaseFirestore (~> 9.2.0)
   - FirebaseCore (9.2.0):
     - FirebaseCoreDiagnostics (~> 9.0)
     - FirebaseCoreInternal (~> 9.0)
@@ -635,6 +638,8 @@ PODS:
     - "gRPC-C++ (~> 1.44.0)"
     - leveldb-library (~> 1.22)
     - nanopb (< 2.30910.0, >= 2.30908.0)
+  - FirebaseFirestoreSwift (9.2.0):
+    - FirebaseFirestore (~> 9.0)
   - GoogleDataTransport (9.1.4):
     - GoogleUtilities/Environment (~> 7.7)
     - nanopb (< 2.30910.0, >= 2.30908.0)
@@ -713,7 +718,8 @@ PODS:
 
 DEPENDENCIES:
   - Firebase/Database
-  - FirebaseFirestore
+  - Firebase/Firestore
+  - FirebaseFirestoreSwift
   - Kingfisher
   - lottie-ios
 
@@ -727,6 +733,7 @@ SPEC REPOS:
     - FirebaseCoreInternal
     - FirebaseDatabase
     - FirebaseFirestore
+    - FirebaseFirestoreSwift
     - GoogleDataTransport
     - GoogleUtilities
     - "gRPC-C++"
@@ -747,6 +754,7 @@ SPEC CHECKSUMS:
   FirebaseCoreInternal: cb966328b6985dbd6f535e1461291063e1c4a00f
   FirebaseDatabase: 0a888e4bcaa8edc43701597daab336201fb47cc9
   FirebaseFirestore: de27d96de10596ebc114adf25c6aa7d36dd91f2f
+  FirebaseFirestoreSwift: d7e3e7b587a7b8118b97ddb038852750026ee861
   GoogleDataTransport: 5fffe35792f8b96ec8d6775f5eccd83c998d5a3b
   GoogleUtilities: e0913149f6b0625b553d70dae12b49fc62914fd1
   "gRPC-C++": 9675f953ace2b3de7c506039d77be1f2e77a8db2
@@ -758,6 +766,6 @@ SPEC CHECKSUMS:
   nanopb: b552cce312b6c8484180ef47159bc0f65a1f0431
   PromisesObjC: ab77feca74fa2823e7af4249b8326368e61014cb
 
-PODFILE CHECKSUM: 7c0bb15b990fb566e759e6bfc9691361bc95fe49
+PODFILE CHECKSUM: 030832b4dfb1cd420be52c5fb1015419cd356bd6
 
 COCOAPODS: 1.11.3
