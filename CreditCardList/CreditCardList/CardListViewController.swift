@@ -8,6 +8,7 @@
 import UIKit
 import Kingfisher
 import FirebaseDatabase
+import FirebaseFirestore
 
 class CardListViewController: UITableViewController {
     /*
@@ -17,6 +18,7 @@ class CardListViewController: UITableViewController {
     
     var creditCardList: [CreditCard] = []
     //var ref: DatabaseReference! //Firebase Realtime Database를 가져올 수 있는 레퍼런스. 데이터베이스의 루트를 가리킨다.
+    var db = Firestore.firestore()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +26,7 @@ class CardListViewController: UITableViewController {
         let nibName = UINib(nibName: "CardListTableViewCell", bundle: nil)
         tableView.register(nibName, forCellReuseIdentifier: "CardListTableViewCell")
         
+        //실시간 데이터베이스 읽기
         //ref = Database.database().reference() //Firebase Database와 연결되어 데이터를 주고 받을 수 있다.
         //데이터 읽기
         /*
@@ -51,6 +54,39 @@ class CardListViewController: UITableViewController {
 //                print("ERROR JSON parsing \(error.localizedDescription)")
 //            }
 //        }
+        
+        
+        
+        
+        //Firestore 데이터 읽기
+        db.collection("creditCardList").addSnapshotListener{ snapshot,error in
+            guard let documents = snapshot?.documents else {
+                print("Error Firestore fetching ducument \(String(describing: error))")
+                return
+            }
+            
+            //Firestore데이터베이스에서 받은 문서들을 CreditCard 타입으로 parsing한 후 nil인 값은 제외하고 creditCardList에 할당하기
+            //즉, 데이터베이스에서 신용카드 데이터를 받아와 신용카드리스트 만들기
+            self.creditCardList = documents.compactMap{ doc -> CreditCard? in //compactMap으로 nil제외시켜 리스트 반환
+                //JSON parsing이 throw문장이므로 do-catch 구문을 사용한다.
+                do{
+                    let jsonData = try JSONSerialization
+                        .data(withJSONObject: doc.data(), options: []) //Foundation 객체로부터 JSON 데이터를 반환
+                    let creditCard = try JSONDecoder().decode(CreditCard.self, from: jsonData) //jsonData을 CreditCard타입으로 디코딩
+                    return creditCard
+                }catch let error {
+                    print("Error JSON parsing \(error.localizedDescription)")
+                    return nil
+                }
+            }
+            self.creditCardList = self.creditCardList.sorted{$0.rank < $1.rank } //순위 순으로 정렬
+            
+            //UI는 메인스레드에서
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+        
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -131,10 +167,10 @@ class CardListViewController: UITableViewController {
 //                          let key = value.keys.first else {return}
 //                    //snapShot의 valuesms array 값으로 전달된다.
 //                    //하지만 우리는 객체의 고유한 id값으로 검색해 snapshot을 받아왔기 때문에 array더라도 값이 하나뿐이다.
-//                    
+//
 //                    self.ref.child(key).removeValue()
-//                
-//                
+//
+//
 //            }
             
         }
