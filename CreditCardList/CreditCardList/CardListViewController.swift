@@ -172,6 +172,7 @@ class CardListViewController: UITableViewController {
     //편집 스타일 설정
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
+            //실시간 데이터 베이스에서 데이터 삭제하기
             //데이터 베이스 데이터 삭제하기
             //Option1 경로를 알 경우
             //let cardID = creditCardList[indexPath.row].id
@@ -192,6 +193,25 @@ class CardListViewController: UITableViewController {
 //
 //            }
             
+            
+            
+            
+            //Firestore에서 데이터 삭제하기
+            //Option1 경로를 알 때
+            let cardID = creditCardList[indexPath.row].id
+            //db.collection("creditCardList").document("card\(cardID)").delete() //해당 경로의 문서 삭제하기
+            
+            //Option2 경로를 모를 때, 검색하기
+            db.collection("creditCardList").whereField("id", isEqualTo: cardID)//해당 컬렉션에 id가 cardID인 필드를 가지고 있는 문서가 있느냐?
+                .getDocuments{snapshot, error in //검색을 통해 걸러낸 문서들 모음 데이터스냅샷
+                    guard let document = snapshot?.documents.first else { //해당 문서가 있는가?
+                        print("Error")
+                        return
+                    }
+                    
+                    document.reference.delete() //문서의 경로를 알아내고, 해당 경로의 문서 삭제하기
+                
+            }
         }
     }
 }
