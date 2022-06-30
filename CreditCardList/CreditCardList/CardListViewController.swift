@@ -118,6 +118,7 @@ class CardListViewController: UITableViewController {
         cardDetailViewController.promotionDetail = creditCardList[indexPath.row].promotionDetail
         self.present(cardDetailViewController, animated: true)
         
+        //실시간 데이터베이스 입력
         //카드 선택 여부 데이터베이스에 저장하기
         //Option1
         //데이터베이스에 경로, 즉 몇 번째 아이템인지 저장되어있으면 할당 쉬움
@@ -143,6 +144,24 @@ class CardListViewController: UITableViewController {
 //
 //                self.ref.child("\(key)/isSelected").setValue(true)
 //            }
+        
+        
+        
+        //Firestore 입력
+        //Option1 경로를 알고 있을 때
+        let cardID = creditCardList[indexPath.row].id
+        //db.collection("creditCardList").document("card\(cardID)").updateData(["isSelected" : true])//해당 경로에 데이터 업데이트
+        
+        //Option2 경로를 알지 못할 때
+        //보통 자동으로 ID가 생성되어 임의의 문자배열로 저장된다 예) card0이 아닌 2jddkl4hs...
+        db.collection("creditCardList").whereField("id", isEqualTo: cardID)//해당 경로의 문서의 id 값이 cardID랑 같은 필드가 있느냐?
+            .getDocuments{ snapshot, error in //있다면 해당 문서의 데이터스냅샷 가져오기
+                guard let document = snapshot?.documents.first else {//검색결과가 여러 개일 수 있기 때문에 snapshot은 배열타입으로 온다
+                    print("Error Firestore fetching document \(String(describing: error))")
+                    return
+                }
+                document.reference.updateData(["isSelected" : true]) //document의 경로를 받아와 해당 경로에 데이터를 업데이트한다.
+        }
     }
     
     //테이블뷰 편집 가능하다고 알려주기
