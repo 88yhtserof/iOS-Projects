@@ -16,7 +16,7 @@ class CardListViewController: UITableViewController {
      */
     
     var creditCardList: [CreditCard] = []
-    var ref: DatabaseReference! //Firebase Realtime Database를 가져올 수 있는 레퍼런스. 데이터베이스의 루트를 가리킨다.
+    //var ref: DatabaseReference! //Firebase Realtime Database를 가져올 수 있는 레퍼런스. 데이터베이스의 루트를 가리킨다.
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +24,7 @@ class CardListViewController: UITableViewController {
         let nibName = UINib(nibName: "CardListTableViewCell", bundle: nil)
         tableView.register(nibName, forCellReuseIdentifier: "CardListTableViewCell")
         
-        ref = Database.database().reference() //Firebase Database와 연결되어 데이터를 주고 받을 수 있다.
+        //ref = Database.database().reference() //Firebase Database와 연결되어 데이터를 주고 받을 수 있다.
         //데이터 읽기
         /*
          실시간 데이터 베이스는 snapshot을 이용해서 데이터를 불러온다. reference를 통해 값을 지켜보고 있다가 snapshot라는 객체로 전달하게 된다.
@@ -32,25 +32,25 @@ class CardListViewController: UITableViewController {
          snapshot.value는 타입을 지정해주는 것인데. 정확히 타입을 지정해 주지 않으면 nil을 반환한다.
          우리는 디코더를 통해 디코딩하면서 우리가 기존에 만들어 주었던 타입으로 변환해 사용할 수 있다.
          */
-        ref.observe(.value){ [weak self] dataSnapShot in
-            guard let value = dataSnapShot.value as? [String: [String:Any]] else {return} //저장된 데이터베이스에 따라 형변환
-            
-            //JSON 디코딩. 디코팅 시 에러가 발생할 수도 있으므로 try-catch구문 사용
-            do{
-                let jsonData = try JSONSerialization.data(withJSONObject: value) //DataSnapshot을 통해 받아온 value를 JSON 데이터로 만들어 반환
-                let cardData = try JSONDecoder().decode([String : CreditCard].self, from: jsonData) //json 데이터를 디코딩
-                let cardList = Array(cardData.values) //딕셔너리 타입이므로 value 값만 받아온다.
-                self?.creditCardList = cardList.sorted{$0.rank < $1.rank} //순위 기준으로 정렬
-                
-                //TableView UI 업데이트
-                //UI는 메인스레드에서 설정
-                DispatchQueue.main.async {
-                    self?.tableView.reloadData()
-                }
-            } catch let error {
-                print("ERROR JSON parsing \(error.localizedDescription)")
-            }
-        }
+//        ref.observe(.value){ [weak self] dataSnapShot in
+//            guard let value = dataSnapShot.value as? [String: [String:Any]] else {return} //저장된 데이터베이스에 따라 형변환
+//
+//            //JSON 디코딩. 디코팅 시 에러가 발생할 수도 있으므로 try-catch구문 사용
+//            do{
+//                let jsonData = try JSONSerialization.data(withJSONObject: value) //DataSnapshot을 통해 받아온 value를 JSON 데이터로 만들어 반환
+//                let cardData = try JSONDecoder().decode([String : CreditCard].self, from: jsonData) //json 데이터를 디코딩
+//                let cardList = Array(cardData.values) //딕셔너리 타입이므로 value 값만 받아온다.
+//                self?.creditCardList = cardList.sorted{$0.rank < $1.rank} //순위 기준으로 정렬
+//
+//                //TableView UI 업데이트
+//                //UI는 메인스레드에서 설정
+//                DispatchQueue.main.async {
+//                    self?.tableView.reloadData()
+//                }
+//            } catch let error {
+//                print("ERROR JSON parsing \(error.localizedDescription)")
+//            }
+//        }
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -85,7 +85,7 @@ class CardListViewController: UITableViewController {
         //카드 선택 여부 데이터베이스에 저장하기
         //Option1
         //데이터베이스에 경로, 즉 몇 번째 아이템인지 저장되어있으면 할당 쉬움
-        let cardID = creditCardList[indexPath.row].id
+        //let cardID = creditCardList[indexPath.row].id
         //ref.child("Item\(cardID)/isSelected") //데이터를 할당할 경로(Item\(cardID)아래 isSelected)를 찾고
             //.setValue(true) //그 경로에 값 할당
         
@@ -98,15 +98,15 @@ class CardListViewController: UITableViewController {
          Item0의 전체 키는 알 수 없지만(Item0이라는 이름이 아닌 임의의 문자열이 키일 수도), 이 객체의 고유한 값 즉 id로 이 객체를 검색해 가져올 수 있다.
          */
         //Option2
-        ref.queryOrdered(byChild: "id") //id라는 키값을 가진 쿼리 불러오기
-            .queryEqual(toValue: cardID) //cardID랑 값이 같은가?
-            .observe(.value) {[weak self] snapshot in //value 타입의 옵져버
-                guard let self = self,
-                      let value = snapshot.value as? [String : [String : Any]],
-                      let key = value.keys.first else {return}
-                
-                self.ref.child("\(key)/isSelected").setValue(true)
-            }
+//        ref.queryOrdered(byChild: "id") //id라는 키값을 가진 쿼리 불러오기
+//            .queryEqual(toValue: cardID) //cardID랑 값이 같은가?
+//            .observe(.value) {[weak self] snapshot in //value 타입의 옵져버
+//                guard let self = self,
+//                      let value = snapshot.value as? [String : [String : Any]],
+//                      let key = value.keys.first else {return}
+//
+//                self.ref.child("\(key)/isSelected").setValue(true)
+//            }
     }
     
     //테이블뷰 편집 가능하다고 알려주기
@@ -119,23 +119,23 @@ class CardListViewController: UITableViewController {
         if editingStyle == .delete {
             //데이터 베이스 데이터 삭제하기
             //Option1 경로를 알 경우
-            let cardID = creditCardList[indexPath.row].id
+            //let cardID = creditCardList[indexPath.row].id
 //            ref.child("Item\(cardID)").removeValue()
             
             //Option2 경로를 모를 경우 -> 검색해서 찾기
-            ref.queryOrdered(byChild: "id") //id 키 값을 가진 쿼리
-                .queryEqual(toValue: cardID) //cardId와 같은 경우
-                .observe(.value) {[weak self] snapShot in //수신 대기할 이벤트 타입이 value 타입
-                    guard let self = self,
-                          let value = snapShot.value as? [String : [String:Any]], //snapShot의 valuesms array 값으로 전달된다.
-                          let key = value.keys.first else {return}
-                    //snapShot의 valuesms array 값으로 전달된다.
-                    //하지만 우리는 객체의 고유한 id값으로 검색해 snapshot을 받아왔기 때문에 array더라도 값이 하나뿐이다.
-                    
-                    self.ref.child(key).removeValue()
-                
-                
-            }
+//            ref.queryOrdered(byChild: "id") //id 키 값을 가진 쿼리
+//                .queryEqual(toValue: cardID) //cardId와 같은 경우
+//                .observe(.value) {[weak self] snapShot in //수신 대기할 이벤트 타입이 value 타입
+//                    guard let self = self,
+//                          let value = snapShot.value as? [String : [String:Any]], //snapShot의 valuesms array 값으로 전달된다.
+//                          let key = value.keys.first else {return}
+//                    //snapShot의 valuesms array 값으로 전달된다.
+//                    //하지만 우리는 객체의 고유한 id값으로 검색해 snapshot을 받아왔기 때문에 array더라도 값이 하나뿐이다.
+//                    
+//                    self.ref.child(key).removeValue()
+//                
+//                
+//            }
             
         }
     }
