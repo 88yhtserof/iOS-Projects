@@ -12,14 +12,14 @@ struct CreditCard: Codable {
     let rank: Int
     let name: String
     let cardImageURL: String
-    let promotionDetail: promotionDetail
+    let promotionDetail: PromotionDetail
     let isSelected: Bool?
 }
 
-struct promotionDetail: Codable {
+struct PromotionDetail: Codable {
     let companyName: String
-    let amount: Int
     let period: String
+    let amount: Int
     let condition: String
     let benefitCondition: String
     let benefitDetail: String

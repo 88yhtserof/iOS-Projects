@@ -17,7 +17,7 @@ class CardDetailViewController: UIViewController {
     @IBOutlet weak var benefitDetailLabel: UILabel!
     @IBOutlet weak var benefitDateLabel: UILabel!
     
-    var promotionDetail: promotionDetail?
+    var promotionDetail: PromotionDetail?
     
     override func viewDidLoad() {
         super.viewDidLoad()
