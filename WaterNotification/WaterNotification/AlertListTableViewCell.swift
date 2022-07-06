@@ -23,6 +23,12 @@ class AlertListTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func configureCell(time: String, meridiem:String, isOn: Bool){
+        self.timeLabel.text = time
+        self.meridiemLabel.text = meridiem
+        self.alertSwitch.isOn = isOn
+    }
+    
 
     @IBAction func alertSwitchValueChanged(_ sender: UISwitch) {
     }
