@@ -16,6 +16,8 @@
 		140A8A00287556FC001D9B50 /* AlertListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140A89FE287556FC001D9B50 /* AlertListTableViewCell.swift */; };
 		140A8A01287556FC001D9B50 /* AlertListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 140A89FF287556FC001D9B50 /* AlertListTableViewCell.xib */; };
 		140A8A0528755A7C001D9B50 /* AlertModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140A8A0428755A7C001D9B50 /* AlertModel.swift */; };
+		140A8A072875F07A001D9B50 /* AddAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140A8A062875F07A001D9B50 /* AddAlertViewController.swift */; };
+		140A8A092875F0C7001D9B50 /* AddAlert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 140A8A082875F0C7001D9B50 /* AddAlert.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		140A89FE287556FC001D9B50 /* AlertListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertListTableViewCell.swift; sourceTree = "<group>"; };
 		140A89FF287556FC001D9B50 /* AlertListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlertListTableViewCell.xib; sourceTree = "<group>"; };
 		140A8A0428755A7C001D9B50 /* AlertModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertModel.swift; sourceTree = "<group>"; };
+		140A8A062875F07A001D9B50 /* AddAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAlertViewController.swift; sourceTree = "<group>"; };
+		140A8A082875F0C7001D9B50 /* AddAlert.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddAlert.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +76,8 @@
 				140A89F628755385001D9B50 /* Info.plist */,
 				140A89FE287556FC001D9B50 /* AlertListTableViewCell.swift */,
 				140A89FF287556FC001D9B50 /* AlertListTableViewCell.xib */,
+				140A8A062875F07A001D9B50 /* AddAlertViewController.swift */,
+				140A8A082875F0C7001D9B50 /* AddAlert.storyboard */,
 			);
 			path = WaterNotification;
 			sourceTree = "<group>";
@@ -134,6 +140,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				140A8A092875F0C7001D9B50 /* AddAlert.storyboard in Resources */,
 				140A89F528755385001D9B50 /* LaunchScreen.storyboard in Resources */,
 				140A89F228755385001D9B50 /* Assets.xcassets in Resources */,
 				140A8A01287556FC001D9B50 /* AlertListTableViewCell.xib in Resources */,
@@ -153,6 +160,7 @@
 				140A8A00287556FC001D9B50 /* AlertListTableViewCell.swift in Sources */,
 				140A8A0528755A7C001D9B50 /* AlertModel.swift in Sources */,
 				140A89EB28755384001D9B50 /* SceneDelegate.swift in Sources */,
+				140A8A072875F07A001D9B50 /* AddAlertViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
