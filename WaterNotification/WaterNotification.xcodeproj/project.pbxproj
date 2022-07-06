@@ -15,6 +15,7 @@
 		140A89FD28755411001D9B50 /* AlertListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140A89FC28755411001D9B50 /* AlertListTableViewController.swift */; };
 		140A8A00287556FC001D9B50 /* AlertListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140A89FE287556FC001D9B50 /* AlertListTableViewCell.swift */; };
 		140A8A01287556FC001D9B50 /* AlertListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 140A89FF287556FC001D9B50 /* AlertListTableViewCell.xib */; };
+		140A8A0528755A7C001D9B50 /* AlertModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140A8A0428755A7C001D9B50 /* AlertModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		140A89FC28755411001D9B50 /* AlertListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertListTableViewController.swift; sourceTree = "<group>"; };
 		140A89FE287556FC001D9B50 /* AlertListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertListTableViewCell.swift; sourceTree = "<group>"; };
 		140A89FF287556FC001D9B50 /* AlertListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlertListTableViewCell.xib; sourceTree = "<group>"; };
+		140A8A0428755A7C001D9B50 /* AlertModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 		140A89E728755384001D9B50 /* WaterNotification */ = {
 			isa = PBXGroup;
 			children = (
+				140A8A0428755A7C001D9B50 /* AlertModel.swift */,
 				140A89FC28755411001D9B50 /* AlertListTableViewController.swift */,
 				140A89E828755384001D9B50 /* AppDelegate.swift */,
 				140A89EA28755384001D9B50 /* SceneDelegate.swift */,
@@ -148,6 +151,7 @@
 				140A89E928755384001D9B50 /* AppDelegate.swift in Sources */,
 				140A89FD28755411001D9B50 /* AlertListTableViewController.swift in Sources */,
 				140A8A00287556FC001D9B50 /* AlertListTableViewCell.swift in Sources */,
+				140A8A0528755A7C001D9B50 /* AlertModel.swift in Sources */,
 				140A89EB28755384001D9B50 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
