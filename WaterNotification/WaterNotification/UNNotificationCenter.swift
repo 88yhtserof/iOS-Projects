@@ -19,5 +19,10 @@ extension UNUserNotificationCenter {
         content.body = "세계보건기구에서 권장하는 하루 물 섭취량은 1.2~1.5리터 입니다."
         content.sound = .default
         content.badge = 1 //뱃지는 자동으로 사라지지 않기 때문에 개발자가 어느 시점에서 수정해야한다.
+        
+        // Trigger - 요청 조건 설정하기
+        //사용자에게 받은 Date를 시간, 분 형태의 데이트 컴포넌트로 만들어 주자
+        let dateComponent = Calendar.current.dateComponents([.hour, .minute], from: alert.date)
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponent, repeats: alert.isOn)
     }
 }
