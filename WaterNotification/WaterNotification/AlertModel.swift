@@ -10,7 +10,7 @@ import Foundation
 struct AlertModel: Codable {
     var id: String = UUID().uuidString //고유한 값이므로 UUID 사용. UniversallyUniqueIdentifier 보편적 고유 식별자
     let date: Date
-    let isOne: Bool
+    var isOn: Bool
     
     //바로 Label에 시간문자열을 할당할 수 있도록
     var time: String{

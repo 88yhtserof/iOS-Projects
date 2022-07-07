@@ -37,7 +37,7 @@ class AlertListTableViewController: UITableViewController {
             var alertList = self.alertList()
             
             //전달받은 데이터로 알림 생성
-            let newAlert = AlertModel(date: date, isOne: true)
+            let newAlert = AlertModel(date: date, isOn: true)
             //수시로 알림이 추가되고 시간 순서대로 정렬되고 상태 변경이 셀 별로 있을 것이다.등등 역동적으로 상태가 변경돠는 상황에서
             //어떻게 각 셀들의 상태를 확인할 수 있을까? UserDefaults와 태그 기능 사용
             
@@ -85,8 +85,11 @@ extension AlertListTableViewController {
         cell.configureCell(
             time: alerts[indexPath.row].time,
             meridiem: alerts[indexPath.row].meridiem,
-            isOn: alerts[indexPath.row].isOne
+            isOn: alerts[indexPath.row].isOn,
+            row: indexPath.row
         )
+        //셀은 자기자신의 인덱스를 어떻게 알까? 셀에 tag값을 부여하자.
+        //각 셀의 토글의 tag에 indexPath.row를 할당하자
         
         return cell
     }

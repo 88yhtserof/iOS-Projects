@@ -23,13 +23,22 @@ class AlertListTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func configureCell(time: String, meridiem:String, isOn: Bool){
+    func configureCell(time: String, meridiem:String, isOn: Bool, row: Int){
         self.timeLabel.text = time
         self.meridiemLabel.text = meridiem
         self.alertSwitch.isOn = isOn
+        self.alertSwitch.tag = row //tag : 뷰 객체를 구분하는데 사용할 수 있는 정수 값
     }
     
 
     @IBAction func alertSwitchValueChanged(_ sender: UISwitch) {
+        //UserDefaults에서 데이터리스트 가져오기
+        guard let data = UserDefaults.standard.value(forKey: "alerts") as? Data, //alerts 키에 해당하는 데이터 가져오기
+              var alerts = try? PropertyListDecoder().decode([AlertModel].self, from: data) else {return}
+        
+        //해당 알람의 isOn 상태 할당
+        alerts[sender.tag].isOn = sender.isOn
+        //변경된 alerts를 UserDefaults에 재할당
+        UserDefaults.standard.set(try? PropertyListEncoder().encode(alerts), forKey: "alerts")
     }
 }
