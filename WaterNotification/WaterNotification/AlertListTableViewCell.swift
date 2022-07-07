@@ -45,6 +45,10 @@ class AlertListTableViewCell: UITableViewCell {
         
         if sender.isOn {
             userNotificationCenter.addNotificationRequest(by: alerts[sender.tag])
+        } else{
+            //알람이 비활성화되면 NotifiationCenter에 있는 요청서 삭제
+            //대기중인(pending) 알림 요청서 중 ID에 해당하는 요청서 삭제
+            userNotificationCenter.removePendingNotificationRequests(withIdentifiers: [alerts[sender.tag].id])
         }
     }
 }

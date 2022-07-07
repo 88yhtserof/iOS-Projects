@@ -117,6 +117,10 @@ extension AlertListTableViewController {
             self.alerts.remove(at: indexPath.row) //먼저 배열에서 삭제
             //수정된 배열을 UserDefaults에 재할당
             UserDefaults.standard.set(try? PropertyListEncoder().encode(self.alerts), forKey: "alerts")
+            //셀을 삭제하면 NotificationCenter에 있는 알림 요청서 또한 삭제한다.
+            //대기상태인(pending) 알림 요청서 중 ID에 해당하는 요청서를 삭제한다.
+            userNotificaionCenter.removePendingNotificationRequests(withIdentifiers: [alerts[indexPath.row].id])
+            
             self.tableView.reloadData()
             return
         default :
