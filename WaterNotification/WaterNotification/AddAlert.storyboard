@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Add Alert View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="AddAlertViewController" id="Y6W-OH-hqX" customClass="AddAlertViewController" customModule="WaterNotification" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wpz-eI-VAS">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <items>
+                                    <navigationItem title="알림 추가" id="daj-zd-8xB">
+                                        <barButtonItem key="leftBarButtonItem" image="xmark" catalog="system" id="oft-4u-bQy">
+                                            <connections>
+                                                <action selector="dismissButtonTapped:" destination="Y6W-OH-hqX" id="vZq-wi-cf0"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="완료" id="qv6-m8-XU5">
+                                            <connections>
+                                                <action selector="doneButtonTapped:" destination="Y6W-OH-hqX" id="9i5-Fr-bIC"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="시간" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gMm-3E-bXA">
+                                <rect key="frame" x="20" y="168" width="30" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" style="inline" translatesAutoresizingMaskIntoConstraints="NO" id="jp3-IH-9um">
+                                <rect key="frame" x="201" y="153.5" width="193" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="6Hk-vb-Cmo"/>
+                                    <constraint firstAttribute="width" constant="193" id="Pdu-tv-dMU"/>
+                                </constraints>
+                                <locale key="locale" localeIdentifier="ko_KR"/>
+                            </datePicker>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="gMm-3E-bXA" firstAttribute="top" secondItem="wpz-eI-VAS" secondAttribute="bottom" constant="80" id="2NA-ay-bUg"/>
+                            <constraint firstItem="wpz-eI-VAS" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="QJy-ju-Djh"/>
+                            <constraint firstItem="gMm-3E-bXA" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="YoD-Ek-rev"/>
+                            <constraint firstItem="wpz-eI-VAS" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="fzL-TD-S9j"/>
+                            <constraint firstItem="wpz-eI-VAS" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="iBN-f9-YQb"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="jp3-IH-9um" secondAttribute="trailing" constant="20" id="mj6-Ym-j7k"/>
+                            <constraint firstItem="jp3-IH-9um" firstAttribute="centerY" secondItem="gMm-3E-bXA" secondAttribute="centerY" id="vWI-nT-3pJ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="datePicker" destination="jp3-IH-9um" id="XGf-Bg-QgD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="80.357142857142847"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="xmark" catalog="system" width="128" height="113"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
