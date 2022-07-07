@@ -24,5 +24,10 @@ extension UNUserNotificationCenter {
         //사용자에게 받은 Date를 시간, 분 형태의 데이트 컴포넌트로 만들어 주자
         let dateComponent = Calendar.current.dateComponents([.hour, .minute], from: alert.date)
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponent, repeats: alert.isOn)
+        
+        //알림 요청서 작성하기
+        let request = UNNotificationRequest(identifier: alert.id, content: content, trigger: trigger)
+        
+        self.add(request)
     }
 }

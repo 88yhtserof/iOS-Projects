@@ -6,10 +6,12 @@
 //
 
 import UIKit
+import UserNotifications
 
 class AlertListTableViewController: UITableViewController {
     
     var alerts: [AlertModel] = []
+    let userNotificaionCenter = UNUserNotificationCenter.current()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +48,8 @@ class AlertListTableViewController: UITableViewController {
             
             self.alerts = alertList
             UserDefaults.standard.set(try? PropertyListEncoder().encode(self.alerts), forKey: "alerts")
+            self.userNotificaionCenter.addNotificationRequest(by: newAlert)
+            
             self.tableView.reloadData()
         }
         

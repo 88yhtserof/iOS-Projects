@@ -12,6 +12,8 @@ class AlertListTableViewCell: UITableViewCell {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var alertSwitch: UISwitch!
     
+    let userNotificationCenter = UNUserNotificationCenter.current()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -40,5 +42,9 @@ class AlertListTableViewCell: UITableViewCell {
         alerts[sender.tag].isOn = sender.isOn
         //변경된 alerts를 UserDefaults에 재할당
         UserDefaults.standard.set(try? PropertyListEncoder().encode(alerts), forKey: "alerts")
+        
+        if sender.isOn {
+            userNotificationCenter.addNotificationRequest(by: alerts[sender.tag])
+        }
     }
 }
