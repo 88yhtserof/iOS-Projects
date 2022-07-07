@@ -95,3 +95,25 @@ extension AlertListTableViewController {
         return 80
     }
 }
+
+//UITableView Delegate
+extension AlertListTableViewController {
+    //편집을 허용할 것인가?
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        switch editingStyle {
+        case .delete:
+            //삭제 기능 구현
+            self.alerts.remove(at: indexPath.row) //먼저 배열에서 삭제
+            //수정된 배열을 UserDefaults에 재할당
+            UserDefaults.standard.set(try? PropertyListEncoder().encode(self.alerts), forKey: "alerts")
+            self.tableView.reloadData()
+            return
+        default :
+            break
+        }
+    }
+}
