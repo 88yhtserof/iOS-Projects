@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import FirebaseCore
+import Firebase
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,6 +18,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Use Firebase library to configure APIs
         FirebaseApp.configure()
+        
+        //Firebase가 각각의 기기에 부여한 인증 토큰을 콘솔에 출력할 수 있다.
+        Installations.installations().authTokenForcingRefresh(true) {result,error in
+            if let error = error {
+                print("ERROR \(error.localizedDescription)")
+                return
+            }
+            
+            guard let result = result else { return }
+            print("Instalation Auth Token: \(result.authToken)")
+        }
         
         return true
     }
