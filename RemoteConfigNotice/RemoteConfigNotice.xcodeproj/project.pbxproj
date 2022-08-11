@@ -16,6 +16,8 @@
 		14F97A5A28A3741E0057EC78 /* RemoteConfigNoticeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F97A5928A3741E0057EC78 /* RemoteConfigNoticeTests.swift */; };
 		14F97A6428A3741E0057EC78 /* RemoteConfigNoticeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F97A6328A3741E0057EC78 /* RemoteConfigNoticeUITests.swift */; };
 		14F97A6628A3741E0057EC78 /* RemoteConfigNoticeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F97A6528A3741E0057EC78 /* RemoteConfigNoticeUITestsLaunchTests.swift */; };
+		14F97A7428A4D6C60057EC78 /* NoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F97A7228A4D6C60057EC78 /* NoticeViewController.swift */; };
+		14F97A7528A4D6C60057EC78 /* NoticeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14F97A7328A4D6C60057EC78 /* NoticeViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		14F97A5F28A3741E0057EC78 /* RemoteConfigNoticeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RemoteConfigNoticeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		14F97A6328A3741E0057EC78 /* RemoteConfigNoticeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigNoticeUITests.swift; sourceTree = "<group>"; };
 		14F97A6528A3741E0057EC78 /* RemoteConfigNoticeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigNoticeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		14F97A7228A4D6C60057EC78 /* NoticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeViewController.swift; sourceTree = "<group>"; };
+		14F97A7328A4D6C60057EC78 /* NoticeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoticeViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,8 @@
 				14F97A4B28A3741E0057EC78 /* Assets.xcassets */,
 				14F97A4D28A3741E0057EC78 /* LaunchScreen.storyboard */,
 				14F97A5028A3741E0057EC78 /* Info.plist */,
+				14F97A7228A4D6C60057EC78 /* NoticeViewController.swift */,
+				14F97A7328A4D6C60057EC78 /* NoticeViewController.xib */,
 			);
 			path = RemoteConfigNotice;
 			sourceTree = "<group>";
@@ -233,6 +239,7 @@
 			files = (
 				14F97A4F28A3741E0057EC78 /* LaunchScreen.storyboard in Resources */,
 				14F97A4C28A3741E0057EC78 /* Assets.xcassets in Resources */,
+				14F97A7528A4D6C60057EC78 /* NoticeViewController.xib in Resources */,
 				14F97A4A28A3741B0057EC78 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -260,6 +267,7 @@
 			files = (
 				14F97A4728A3741B0057EC78 /* ViewController.swift in Sources */,
 				14F97A4328A3741B0057EC78 /* AppDelegate.swift in Sources */,
+				14F97A7428A4D6C60057EC78 /* NoticeViewController.swift in Sources */,
 				14F97A4528A3741B0057EC78 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
