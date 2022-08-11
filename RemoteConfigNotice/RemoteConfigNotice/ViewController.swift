@@ -7,6 +7,7 @@
 
 import UIKit
 import FirebaseRemoteConfig
+import FirebaseAnalytics
 
 class ViewController: UIViewController {
     
@@ -62,6 +63,8 @@ extension ViewController {
                 //프로퍼티를 사용해 화면 간 데이터 전달하기
                 noticeViewController.noticeContent = (title: title, detail: detail, date: date)
                 self.present(noticeViewController, animated: true)
+            } else {
+                self.showEventAlert()
             }
         }
     }
@@ -69,5 +72,35 @@ extension ViewController {
     func isNoticeHidden(_ remoteConfig: RemoteConfig) -> Bool {
         return remoteConfig["isHidden"]//원격 구성 데이터 중 key가 isHidden에 해당하는 value 가져오기
             .boolValue //근데 이 value는 Boolean 타입이다.
+    }
+}
+
+//A/B Testing
+extension ViewController {
+    func showEventAlert() {
+        guard let remoteConfig = remoteConfig else { return }
+        remoteConfig.fetch { [weak self] status, _ in
+            if status == .success {
+                remoteConfig.activate(completion: nil)
+            } else {
+                print("ERROR: Config not fetched")
+            }
+            
+            //'message'라는 key의 value 받아오기
+            let message = remoteConfig["message"].stringValue ?? ""
+            
+            //Alert 구성
+            let confirmAction = UIAlertAction(title: "확인", style: .default) {_ in
+                //Google Analytics
+                //이벤트를 기록하는 기능을 구현
+                Analytics.logEvent("promotion_alert", parameters: nil) //promotion_alert라는 이름으로 파이어베이스에 이벤트 기록
+            }
+            let cancelAction = UIAlertAction(title: "취소", style: .cancel,handler: nil)
+            let alertController = UIAlertController(title: "깜짝 이벤트", message: message, preferredStyle: .alert)
+            alertController.addAction(confirmAction)
+            alertController.addAction(cancelAction)
+            
+            self?.present(alertController, animated: true)
+        }
     }
 }
