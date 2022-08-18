@@ -12,11 +12,21 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
 
 
+    //특정 뷰 컨트롤러를 이니셜 뷰 컨트롤러로 인지하고 화면에 띄울 수 있도록 설정
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let _ = (scene as? UIWindowScene) else { return }
+        //window를 관리할 scene을 생성
+        guard let windowScene = scene as? UIWindowScene else { return } //하나 이상의 window(창)를 관리하는 scene
+        self.window = UIWindow(windowScene: windowScene) //기존 window 객체에 Scene을 연결해준다.
+        
+        let layout = UICollectionViewFlowLayout() //collectionView는 FlowLayout이 있어야 layout을 만들 수 있다..?
+        let homeViewController = HomeViewController(collectionViewLayout: layout)
+        //네비게이션 컨트롤러의 rootViewController 설정
+        let rootNavigationController = UINavigationController(rootViewController: homeViewController)
+        
+        self.window?.rootViewController = rootNavigationController
+        //makeKeyAndVisible() 메서드를 사용해야 앞에서 window에 설정한 값들이 화면에 보여진다.
+        self.window?.makeKeyAndVisible() //window를 보여주고 그 window를 key window로 만든다.
+        //window를 보여주고 이 window의 단계 이하의 window들 중 맨 앞에 위치시킨다.
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
