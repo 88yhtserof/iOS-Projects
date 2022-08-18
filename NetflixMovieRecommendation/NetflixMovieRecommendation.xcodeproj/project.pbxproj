@@ -15,6 +15,7 @@
 		1465A0C928ADFA6500B3BC19 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1465A0C828ADFA6500B3BC19 /* SnapKit */; };
 		1465A0CB28AE097E00B3BC19 /* Content.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1465A0CA28AE097E00B3BC19 /* Content.plist */; };
 		1465A0CD28AE0A1B00B3BC19 /* Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1465A0CC28AE0A1B00B3BC19 /* Content.swift */; };
+		1465A0CF28AE22AF00B3BC19 /* ContentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1465A0CE28AE22AF00B3BC19 /* ContentCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		1465A0C528ADF5AA00B3BC19 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		1465A0CA28AE097E00B3BC19 /* Content.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Content.plist; sourceTree = "<group>"; };
 		1465A0CC28AE0A1B00B3BC19 /* Content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Content.swift; sourceTree = "<group>"; };
+		1465A0CE28AE22AF00B3BC19 /* ContentCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 				1465A0C528ADF5AA00B3BC19 /* HomeViewController.swift */,
 				1465A0CA28AE097E00B3BC19 /* Content.plist */,
 				1465A0CC28AE0A1B00B3BC19 /* Content.swift */,
+				1465A0CE28AE22AF00B3BC19 /* ContentCollectionViewCell.swift */,
 			);
 			path = NetflixMovieRecommendation;
 			sourceTree = "<group>";
@@ -153,6 +156,7 @@
 				1465A0B428ADF51300B3BC19 /* SceneDelegate.swift in Sources */,
 				1465A0C628ADF5AA00B3BC19 /* HomeViewController.swift in Sources */,
 				1465A0CD28AE0A1B00B3BC19 /* Content.swift in Sources */,
+				1465A0CF28AE22AF00B3BC19 /* ContentCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
