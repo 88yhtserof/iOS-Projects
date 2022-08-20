@@ -61,7 +61,7 @@ extension HomeViewController {
 //            return contents[section].contentItem.count
 //        }
         
-        if contents[section].sectionType == .basic {
+        if contents[section].sectionType == .basic || contents[section].sectionType == .large {
             switch section {
             case 0:
                 return 1
@@ -120,6 +120,8 @@ extension HomeViewController {
             switch self.contents[sectionNumber].sectionType {
             case .basic:
                 return self.createBasicTypeSection()
+            case .large:
+                return self.createLargeTypeSection()
             default:
                 return nil
             }
@@ -127,6 +129,7 @@ extension HomeViewController {
     }
     
     //Compositional Layout을 사용해 넷플릭스 배너 UI 구성하기
+    //Basic 타입 섹션 레이아웃
     private func createBasicTypeSection() -> NSCollectionLayoutSection {
         //item
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.3), heightDimension: .fractionalHeight(0.75))
@@ -143,6 +146,34 @@ extension HomeViewController {
         //헤더 설정하기
         let sectionHeader = self.createSectionHeader()
         section.boundarySupplementaryItems = [sectionHeader]
+        return section
+    }
+    
+    //Large 타입 섹션 레이아웃
+    private func createLargeTypeSection() -> NSCollectionLayoutSection {
+        //item
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.3), heightDimension: .fractionalHeight(0.75))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        item.contentInsets = .init(top: 10, leading: 5, bottom: 0, trailing: 5)
+        //Large 섹션에서 아이템이 Basic보다 큰데 왜 item의 크기를 Basic과 동일하게 설정할까?
+        //group의 크기를 크게 설정해줄 예정!
+        //item은 group에 속하기 때문에 group 크기의 영향을 받는다.
+        //group의 크기에 따라 item은 설정해둔 비율로 크기가 조정된다.(.fractional옵션을 사용했기 떄문)
+        
+        //group
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.9), heightDimension: .estimated(400))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 2)
+        //count는 한 화면에 보이는 그룹의 개수(cell..?)를 의미한다.
+        
+        //section
+        let section = NSCollectionLayoutSection(group: group)
+        section.orthogonalScrollingBehavior = .continuous
+        
+        //헤더 설정하기
+        let sectionHeader = self.createSectionHeader()
+        section.boundarySupplementaryItems = [sectionHeader]
+        section.contentInsets = .init(top: 0, leading: 5, bottom: 0, trailing: 5)
+        
         return section
     }
     
