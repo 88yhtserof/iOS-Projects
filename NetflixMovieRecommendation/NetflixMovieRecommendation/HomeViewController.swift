@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 class HomeViewController: UICollectionViewController {
     var contents: [Content] = []
@@ -93,3 +94,25 @@ extension HomeViewController {
         print("TEST: \(sectionName)섹션의 \(indexPath.row+1)번째 컨텐츠")
     }
 }
+
+//SwiftUI를 활용한 미리보기
+struct HomeViewController_Previews: PreviewProvider {
+    static var previews: some View {
+        Container().edgesIgnoringSafeArea(.all)
+    }
+    
+    struct Container: UIViewControllerRepresentable {
+        func makeUIViewController(context: Context) -> UIViewController {
+            let layout = UICollectionViewLayout()
+            let homViewController = HomeViewController(collectionViewLayout: layout)
+            
+            return UINavigationController(rootViewController: homViewController)
+        }
+        
+        func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
+        }
+        
+        typealias UIViewControllerType = UIViewController
+    }
+}
+
