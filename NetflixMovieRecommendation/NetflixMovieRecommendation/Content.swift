@@ -8,7 +8,8 @@
 import UIKit
 
 struct Content: Decodable {
-    let sectiontype: SectionType //몇 가지 타입 형태가 고정되어 있기 때문에 string말고 열거형을 사용하자
+    //Key 명이 다르면 데이터를 디코드할 수 없으니 주의하자!
+    let sectionType: SectionType //몇 가지 타입 형태가 고정되어 있기 때문에 string말고 열거형을 사용하자
     let sectionName: String
     let contentItem: [Item]
     
