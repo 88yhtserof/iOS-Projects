@@ -29,6 +29,11 @@ class HomeViewController: UICollectionViewController {
         collectionView.register(ContentCollectionViewCell.self, forCellWithReuseIdentifier: "ContentCollectionViewCell")
         //헤더 설정
         collectionView.register(ContentCollectionViewHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "ContentCollectionViewHeader") //cell이 아니라 Header 속성임을 알려주기 위한 코드
+        
+        //CollectiomViewLayout 설정
+        //우리가 초기에 임시로 SceneDelegate에서 UICollectionViewFlowLayout()를 설정했지만
+        //실제로 뷰가 켜지면 레이아웃을 새로 구성한다.
+        collectionView.collectionViewLayout = self.layout()
     }
     
     //컨텐츠 배열이 Content.plist에 있는 값을 가지고 오는 메서드
@@ -47,19 +52,31 @@ class HomeViewController: UICollectionViewController {
 extension HomeViewController {
     //섹션 당 보여질 셀의 개수
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        switch section {
-        case 0:
-            return 1
-        case 1:
-            return contents[section].contentItem.count
-        default:
-            return contents[section].contentItem.count
+//        switch section {
+//        case 0:
+//            return 1
+//        case 1:
+//            return contents[section].contentItem.count
+//        default:
+//            return contents[section].contentItem.count
+//        }
+        
+        if contents[section].sectionType == .basic {
+            switch section {
+            case 0:
+                return 1
+            case 1:
+                return contents[section].contentItem.count
+            default:
+                return contents[section].contentItem.count
+            }
         }
+        return 0
     }
     
     //컬렉션 뷰 셀 지정
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        switch contents[indexPath.section].sectiontype {
+        switch contents[indexPath.section].sectionType {
         case .basic, .large:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ContentCollectionViewCell", for: indexPath) as? ContentCollectionViewCell else { return UICollectionViewCell() }
             
@@ -92,6 +109,52 @@ extension HomeViewController {
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let sectionName = contents[indexPath.section].sectionName
         print("TEST: \(sectionName)섹션의 \(indexPath.row+1)번째 컨텐츠")
+    }
+    
+    //각각의 섹션 타입에 대한 UICollectionViewLayout 생성
+    private func layout() -> UICollectionViewLayout {
+        return UICollectionViewCompositionalLayout { [weak self] sectionNumber, enviroment -> NSCollectionLayoutSection? in
+            guard let self = self else { return nil }
+            
+            //contents마다 가지는 섹션 타입 별로 구분해 작업하기
+            switch self.contents[sectionNumber].sectionType {
+            case .basic:
+                return self.createBasicTypeSection()
+            default:
+                return nil
+            }
+        }
+    }
+    
+    //Compositional Layout을 사용해 넷플릭스 배너 UI 구성하기
+    private func createBasicTypeSection() -> NSCollectionLayoutSection {
+        //item
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.3), heightDimension: .fractionalHeight(0.75))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        item.contentInsets = .init(top: 10, leading: 5, bottom: 0, trailing: 5) //아이템이 상하좌우 간격을 가지도록 설정
+        //group
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.9), heightDimension: .estimated(200))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 3)//group에서 스크롤 방향을 정해줄 수 있다.
+        //section
+        let section = NSCollectionLayoutSection(group: group)
+        section.orthogonalScrollingBehavior = .continuous //섹션의 스크롤 행동 설정
+        section.contentInsets = .init(top: 0, leading: 5, bottom: 0, trailing: 5)
+        
+        //헤더 설정하기
+        let sectionHeader = self.createSectionHeader()
+        section.boundarySupplementaryItems = [sectionHeader]
+        return section
+    }
+    
+    //SectionHeader 레이아웃 설정
+    private func createSectionHeader() -> NSCollectionLayoutBoundarySupplementaryItem {
+        //SectionHeader 사이즈
+        let layoutSectionHeaderSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(30))
+        
+        //SectionHeader Layout
+        let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: layoutSectionHeaderSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
+        
+        return sectionHeader
     }
 }
 

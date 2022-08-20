@@ -18,7 +18,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = scene as? UIWindowScene else { return } //하나 이상의 window(창)를 관리하는 scene
         self.window = UIWindow(windowScene: windowScene) //기존 window 객체에 Scene을 연결해준다.
         
-        let layout = UICollectionViewFlowLayout() //collectionView는 FlowLayout이 있어야 layout을 만들 수 있다..?
+        let layout = UICollectionViewFlowLayout() //collectionView는 FlowLayout이 있어야 layout을 만들 수 있다..? --> 임시로 초기 설정
         let homeViewController = HomeViewController(collectionViewLayout: layout)
         //네비게이션 컨트롤러의 rootViewController 설정
         let rootNavigationController = UINavigationController(rootViewController: homeViewController)
