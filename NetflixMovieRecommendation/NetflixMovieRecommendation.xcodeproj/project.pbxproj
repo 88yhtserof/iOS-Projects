@@ -17,6 +17,7 @@
 		1465A0CD28AE0A1B00B3BC19 /* Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1465A0CC28AE0A1B00B3BC19 /* Content.swift */; };
 		1465A0CF28AE22AF00B3BC19 /* ContentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1465A0CE28AE22AF00B3BC19 /* ContentCollectionViewCell.swift */; };
 		1465A0D128AE339300B3BC19 /* ContentCollectionViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1465A0D028AE339300B3BC19 /* ContentCollectionViewHeader.swift */; };
+		14A3039D28B0C63E0095CCCD /* ContentRankCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A3039C28B0C63E0095CCCD /* ContentRankCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		1465A0CC28AE0A1B00B3BC19 /* Content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Content.swift; sourceTree = "<group>"; };
 		1465A0CE28AE22AF00B3BC19 /* ContentCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCollectionViewCell.swift; sourceTree = "<group>"; };
 		1465A0D028AE339300B3BC19 /* ContentCollectionViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCollectionViewHeader.swift; sourceTree = "<group>"; };
+		14A3039C28B0C63E0095CCCD /* ContentRankCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentRankCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 				1465A0CC28AE0A1B00B3BC19 /* Content.swift */,
 				1465A0CE28AE22AF00B3BC19 /* ContentCollectionViewCell.swift */,
 				1465A0D028AE339300B3BC19 /* ContentCollectionViewHeader.swift */,
+				14A3039C28B0C63E0095CCCD /* ContentRankCollectionViewCell.swift */,
 			);
 			path = NetflixMovieRecommendation;
 			sourceTree = "<group>";
@@ -155,6 +158,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14A3039D28B0C63E0095CCCD /* ContentRankCollectionViewCell.swift in Sources */,
 				1465A0B228ADF51300B3BC19 /* AppDelegate.swift in Sources */,
 				1465A0D128AE339300B3BC19 /* ContentCollectionViewHeader.swift in Sources */,
 				1465A0B428ADF51300B3BC19 /* SceneDelegate.swift in Sources */,
