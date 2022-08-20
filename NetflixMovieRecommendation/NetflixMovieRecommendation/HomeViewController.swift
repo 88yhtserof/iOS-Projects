@@ -28,7 +28,6 @@ class HomeViewController: UICollectionViewController {
         collectionView.register(ContentCollectionViewCell.self, forCellWithReuseIdentifier: "ContentCollectionViewCell")
         //헤더 설정
         collectionView.register(ContentCollectionViewHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "ContentCollectionViewHeader") //cell이 아니라 Header 속성임을 알려주기 위한 코드
-        collectionView.register(ContentCollectionViewHeader.self, forCellWithReuseIdentifier: "ContentCollectionViewHeader")
     }
     
     //컨텐츠 배열이 Content.plist에 있는 값을 가지고 오는 메서드
