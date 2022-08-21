@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		142025B628B20F76008A6187 /* ContentMainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142025B528B20F76008A6187 /* ContentMainCollectionViewCell.swift */; };
+		142025B828B20FE1008A6187 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142025B728B20FE1008A6187 /* UIButton.swift */; };
 		1465A0B228ADF51300B3BC19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1465A0B128ADF51300B3BC19 /* AppDelegate.swift */; };
 		1465A0B428ADF51300B3BC19 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1465A0B328ADF51300B3BC19 /* SceneDelegate.swift */; };
 		1465A0BB28ADF51600B3BC19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1465A0BA28ADF51600B3BC19 /* Assets.xcassets */; };
@@ -21,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		142025B528B20F76008A6187 /* ContentMainCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentMainCollectionViewCell.swift; sourceTree = "<group>"; };
+		142025B728B20FE1008A6187 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 		1465A0AE28ADF51300B3BC19 /* NetflixMovieRecommendation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetflixMovieRecommendation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1465A0B128ADF51300B3BC19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1465A0B328ADF51300B3BC19 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +81,8 @@
 				1465A0CE28AE22AF00B3BC19 /* ContentCollectionViewCell.swift */,
 				1465A0D028AE339300B3BC19 /* ContentCollectionViewHeader.swift */,
 				14A3039C28B0C63E0095CCCD /* ContentRankCollectionViewCell.swift */,
+				142025B528B20F76008A6187 /* ContentMainCollectionViewCell.swift */,
+				142025B728B20FE1008A6187 /* UIButton.swift */,
 			);
 			path = NetflixMovieRecommendation;
 			sourceTree = "<group>";
@@ -163,8 +169,10 @@
 				1465A0D128AE339300B3BC19 /* ContentCollectionViewHeader.swift in Sources */,
 				1465A0B428ADF51300B3BC19 /* SceneDelegate.swift in Sources */,
 				1465A0C628ADF5AA00B3BC19 /* HomeViewController.swift in Sources */,
+				142025B628B20F76008A6187 /* ContentMainCollectionViewCell.swift in Sources */,
 				1465A0CD28AE0A1B00B3BC19 /* Content.swift in Sources */,
 				1465A0CF28AE22AF00B3BC19 /* ContentCollectionViewCell.swift in Sources */,
+				142025B828B20FE1008A6187 /* UIButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
