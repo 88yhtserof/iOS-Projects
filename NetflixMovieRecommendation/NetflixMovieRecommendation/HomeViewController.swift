@@ -10,6 +10,8 @@ import SwiftUI
 
 class HomeViewController: UICollectionViewController {
     var contents: [Content] = []
+    var mainItem: Item?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,12 +26,17 @@ class HomeViewController: UICollectionViewController {
         
         //Data 설정 및 가져오기
         contents = getContents()
+        //contents의 0번째에서 랜덤으로 element 가져오기
+        mainItem = contents.first?.contentItem.randomElement()
         
         //collectionView 아이템(Cell) 설정
         collectionView.register(ContentCollectionViewCell.self, forCellWithReuseIdentifier: "ContentCollectionViewCell")
         
         //CollectionView Rank Cell 설정
         collectionView.register(ContentRankCollectionViewCell.self, forCellWithReuseIdentifier: "ContentRankCollectionViewCell")
+        
+        //CollectionView Main Cell 설정
+        collectionView.register(ContentMainCollectionViewCell.self, forCellWithReuseIdentifier: "ContentMainCollectionViewCell")
         
         //헤더 설정
         collectionView.register(ContentCollectionViewHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "ContentCollectionViewHeader") //cell이 아니라 Header 속성임을 알려주기 위한 코드
@@ -56,19 +63,12 @@ class HomeViewController: UICollectionViewController {
 extension HomeViewController {
     //섹션 당 보여질 셀의 개수
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if contents[section].sectionType == .basic
-            || contents[section].sectionType == .large
-            || contents[section].sectionType == .rank {
-            switch section {
-            case 0:
-                return 1
-            case 1:
-                return contents[section].contentItem.count
-            default:
-                return contents[section].contentItem.count
-            }
+        switch section {
+        case 0:
+            return 1
+        default:
+            return contents[section].contentItem.count
         }
-        return 0
     }
     
     //컬렉션 뷰 셀 지정
@@ -84,9 +84,12 @@ extension HomeViewController {
             cell.imageView.image = contents[indexPath.section].contentItem[indexPath.row].image
             cell.rankLabel.text = String(describing: indexPath.row + 1)
             return cell
-            
-        default:
-            return UICollectionViewCell()
+        case .main:
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ContentMainCollectionViewCell", for: indexPath) as? ContentMainCollectionViewCell else {return UICollectionViewCell()}
+            cell.imageView.image = mainItem?.image
+            cell.descriptionLabel.text = mainItem?.description
+            print("\( mainItem?.description)")
+            return cell
         }
     }
     
@@ -127,12 +130,13 @@ extension HomeViewController {
                 return self.createLargeTypeSection()
             case .rank:
                 return self.createRankTypeSection()
-            default:
-                return nil
+            case .main:
+                return self.createMainSection()
             }
         }
     }
     
+    //MARK: - Section Layout
     //Compositional Layout을 사용해 넷플릭스 배너 UI 구성하기
     //Basic 타입 섹션 레이아웃
     private func createBasicTypeSection() -> NSCollectionLayoutSection {
@@ -201,6 +205,24 @@ extension HomeViewController {
         let sectionHeader = self.createSectionHeader()
         section.boundarySupplementaryItems = [sectionHeader]
         section.contentInsets = .init(top: 0, leading: 5, bottom: 0, trailing: 5)
+        
+        return section
+    }
+    
+    //Main Section Layout
+    private func createMainSection() -> NSCollectionLayoutSection {
+        //item
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        
+        //group
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(450))
+        //가로, 세로 모두 움직이지 않음. 근데 초기화해주어야 하니깐 vertical..?
+        let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
+        
+        //section
+        let section = NSCollectionLayoutSection(group: group)
+        section.contentInsets = .init(top: 0, leading: 0, bottom: 20, trailing: 0)
         
         return section
     }
