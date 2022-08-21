@@ -55,6 +55,10 @@ class ContentMainCollectionViewCell: UICollectionViewCell {
         descriptionLabel.textColor = .white
         descriptionLabel.sizeToFit() //텍스트에 맞춰 뷰 사이즈 조정
         
+        descriptionLabel.snp.makeConstraints{
+            $0.height.equalTo(13)
+        }
+        
         //contentStactView
         contentStackView.axis = .horizontal
         contentStackView.alignment = .center
@@ -62,7 +66,6 @@ class ContentMainCollectionViewCell: UICollectionViewCell {
         contentStackView.spacing = 20
         
         [plusButton, infoButton].forEach{
-            contentStackView.addArrangedSubview($0)
             $0.titleLabel?.font = .systemFont(ofSize: 13)
             $0.setTitleColor(.white, for: .normal)
             $0.imageView?.tintColor = .white
@@ -77,8 +80,8 @@ class ContentMainCollectionViewCell: UICollectionViewCell {
         infoButton.setImage(UIImage(systemName: "info_circle"), for: .normal)
         infoButton.addTarget(self, action: #selector(infoButtonTapped ), for: .touchUpInside)
         
-        contentStackView.addArrangedSubview(playButton)
         playButton.setTitle("▶︎ 재생", for: .normal)
+        playButton.titleLabel?.font = .systemFont(ofSize: 13)
         playButton.setTitleColor(.black, for: .normal)
         playButton.backgroundColor = .white
         playButton.layer.cornerRadius = 3
@@ -88,8 +91,13 @@ class ContentMainCollectionViewCell: UICollectionViewCell {
         }
         playButton.addTarget(self, action: #selector(playButtonTapped), for: .touchUpInside)
         
+        [plusButton, playButton, infoButton].forEach{
+            contentStackView.addArrangedSubview($0)
+        }
+        
         contentStackView.snp.makeConstraints{
-            $0.edges.equalToSuperview()
+            $0.leading.trailing.equalToSuperview().inset(30)
+            $0.height.equalTo(60)
         }
         
         baseStackView.snp.makeConstraints{
