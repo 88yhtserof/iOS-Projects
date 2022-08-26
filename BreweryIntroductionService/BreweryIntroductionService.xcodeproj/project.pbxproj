@@ -16,6 +16,7 @@
 		1419412528B72A7F008303B3 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1419412428B72A7F008303B3 /* SnapKit */; };
 		1419412728B72D91008303B3 /* Beer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1419412628B72D91008303B3 /* Beer.swift */; };
 		142C061428B8804700AB9950 /* BeerListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142C061328B8804700AB9950 /* BeerListTableViewCell.swift */; };
+		142C061628B88B1A00AB9950 /* BeerDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142C061528B88B1A00AB9950 /* BeerDetailTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		1419411B28B72738008303B3 /* BeerListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerListTableViewController.swift; sourceTree = "<group>"; };
 		1419412628B72D91008303B3 /* Beer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Beer.swift; sourceTree = "<group>"; };
 		142C061328B8804700AB9950 /* BeerListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerListTableViewCell.swift; sourceTree = "<group>"; };
+		142C061528B88B1A00AB9950 /* BeerDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerDetailTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 				1419411B28B72738008303B3 /* BeerListTableViewController.swift */,
 				1419412628B72D91008303B3 /* Beer.swift */,
 				142C061328B8804700AB9950 /* BeerListTableViewCell.swift */,
+				142C061528B88B1A00AB9950 /* BeerDetailTableViewController.swift */,
 			);
 			path = BreweryIntroductionService;
 			sourceTree = "<group>";
@@ -156,6 +159,7 @@
 				142C061428B8804700AB9950 /* BeerListTableViewCell.swift in Sources */,
 				1419410A28B7260D008303B3 /* SceneDelegate.swift in Sources */,
 				1419411C28B72738008303B3 /* BeerListTableViewController.swift in Sources */,
+				142C061628B88B1A00AB9950 /* BeerDetailTableViewController.swift in Sources */,
 				1419412728B72D91008303B3 /* Beer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
