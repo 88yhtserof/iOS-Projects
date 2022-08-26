@@ -50,4 +50,16 @@ class BeerListTableViewCell: UITableViewCell {
             $0.top.equalTo(nameLabel.snp.bottom).offset(5) //위를 nameLabel의 아래에 맞춰 tag가 name의 밑에 위치할 수 있도록 한다.
         }
     }
+    
+    //데이터 전달받을 메서드
+    func configure(with beer: Beer) {
+        let imageURL = URL(string: beer.imageURL ?? "")
+        beerImageView.kf.setImage(with: imageURL, placeholder: #imageLiteral(resourceName: "beer_icon")) //placeholder는 이미지가 로딩 중이거나 전달되지 않았을 경우 띄워주는 기본 이미지를 의미한다.
+        nameLabel.text = beer.name ?? "이름 없는 맥주"
+        taglineLabel.text = beer.tagLine
+        
+        //accessoryType 설정 시 cell의 우측에 이미지가 표시된다.
+        accessoryType = .disclosureIndicator // > 이미지
+        selectionStyle = .none //cell을 클릭하더라도 회색 음영이 나타나지 않는다.
+    }
 }
