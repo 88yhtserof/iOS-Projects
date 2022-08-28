@@ -8,3 +8,8 @@
 |재난 문자 push 알림 | 실시간 공지사항 팝업 만들기 | 넷플릭스 스타일 영화 추천 서비스 |
 | ---- | ---- | ---- |
 | | ![Simulator Screen Shot - iPhone 11 - 2022-08-12 at 00 07 51](https://user-images.githubusercontent.com/65601189/185290290-48089091-15e9-4bd8-ab0b-95e43b4abd30.png)| ![Simulator Screen Recording - iPhone 11 - 2022-08-21 at 17 40 49](https://user-images.githubusercontent.com/65601189/186073116-5ec4ecf1-db89-4247-a6fa-a36f535b6dfb.gif) |
+
+|브루어리 소개 서비스| | |
+| ---- | ---- | ---- |
+|![Simulator Screen Recording - iPhone 11 - 2022-08-28 at 16 29 34](https://user-images.githubusercontent.com/65601189/187063273-1d808584-f6bb-47a7-828f-a3b885640696.gif) | | |
+
