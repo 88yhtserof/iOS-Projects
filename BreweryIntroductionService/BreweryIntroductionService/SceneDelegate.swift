@@ -24,7 +24,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let rootViewController = BeerListTableViewController() //특정 뷰컨트롤러를 초기화면으로 설정하기
         let rootNavigationController = UINavigationController(rootViewController: rootViewController)
         
-        self.window?.rootViewController = rootViewController
+        self.window?.rootViewController = rootNavigationController
         self.window?.makeKeyAndVisible() //지금까지 window에 설정한 값을 보이고 그 window를 key window로 설정한다.
     }
 
