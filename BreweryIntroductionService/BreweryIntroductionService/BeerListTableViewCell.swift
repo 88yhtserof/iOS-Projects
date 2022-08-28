@@ -34,9 +34,9 @@ class BeerListTableViewCell: UITableViewCell {
         //오토레이아웃 설정
         beerImageView.snp.makeConstraints{
             $0.centerY.equalToSuperview()
-            $0.leading.trailing.bottom.equalToSuperview().inset(20)
+            $0.leading.top.bottom.equalToSuperview().inset(20)
             $0.width.equalTo(80) //고정값
-            $0.height.equalTo(120)
+            //$0.height.equalTo(120)
         }
         
         nameLabel.snp.makeConstraints{
