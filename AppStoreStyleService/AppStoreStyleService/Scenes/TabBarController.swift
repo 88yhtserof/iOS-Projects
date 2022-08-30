@@ -12,7 +12,7 @@ class TabBarController: UITabBarController {
     //탭 바 컨트롤러에 넣을 탭바 아이템
     //lazy 키워드를 사용하면 해당 변수가 처음 호출되었을 때 사용자가 지정한 함수를 사용해 생성되기 때문에 메모리 절약에 도움이 된다.
     private lazy var todayViewController: UIViewController = {
-        let viewController = UIViewController()
+        let viewController = TodayViewController()
         let tabBarItem = UITabBarItem(
             title: "투데이",
             image: UIImage(systemName: "mail"),
