@@ -17,6 +17,7 @@
 		1443C2C728BDEFF900FF7844 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1443C2C628BDEFF900FF7844 /* TodayViewController.swift */; };
 		1443C2C928BDF53700FF7844 /* TodayCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1443C2C828BDF53700FF7844 /* TodayCollectionViewCell.swift */; };
 		1443C2CB28BE0FA300FF7844 /* TodayCollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1443C2CA28BE0FA300FF7844 /* TodayCollectionHeaderView.swift */; };
+		1443C2CE28BE44C300FF7844 /* AppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1443C2CD28BE44C300FF7844 /* AppViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		1443C2C628BDEFF900FF7844 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		1443C2C828BDF53700FF7844 /* TodayCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayCollectionViewCell.swift; sourceTree = "<group>"; };
 		1443C2CA28BE0FA300FF7844 /* TodayCollectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayCollectionHeaderView.swift; sourceTree = "<group>"; };
+		1443C2CD28BE44C300FF7844 /* AppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 		1443C2C428BDEFB700FF7844 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				1443C2CC28BE44AE00FF7844 /* App */,
 				1443C2C528BDEFDB00FF7844 /* Today */,
 				1443C2BA28BDE50200FF7844 /* TabBarController.swift */,
 			);
@@ -91,6 +94,14 @@
 				1443C2CA28BE0FA300FF7844 /* TodayCollectionHeaderView.swift */,
 			);
 			path = Today;
+			sourceTree = "<group>";
+		};
+		1443C2CC28BE44AE00FF7844 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				1443C2CD28BE44C300FF7844 /* AppViewController.swift */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,6 +186,7 @@
 				1443C2BB28BDE50200FF7844 /* TabBarController.swift in Sources */,
 				1443C2A728BDE15800FF7844 /* AppDelegate.swift in Sources */,
 				1443C2CB28BE0FA300FF7844 /* TodayCollectionHeaderView.swift in Sources */,
+				1443C2CE28BE44C300FF7844 /* AppViewController.swift in Sources */,
 				1443C2A928BDE15800FF7844 /* SceneDelegate.swift in Sources */,
 				1443C2C928BDF53700FF7844 /* TodayCollectionViewCell.swift in Sources */,
 			);
