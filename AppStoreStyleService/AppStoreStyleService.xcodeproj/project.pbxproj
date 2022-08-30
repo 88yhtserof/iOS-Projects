@@ -11,7 +11,7 @@
 		1443C2A928BDE15800FF7844 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1443C2A828BDE15800FF7844 /* SceneDelegate.swift */; };
 		1443C2B028BDE15900FF7844 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1443C2AF28BDE15900FF7844 /* Assets.xcassets */; };
 		1443C2B328BDE15900FF7844 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1443C2B128BDE15900FF7844 /* LaunchScreen.storyboard */; };
-		1443C2BB28BDE50200FF7844 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1443C2BA28BDE50200FF7844 /* ViewController.swift */; };
+		1443C2BB28BDE50200FF7844 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1443C2BA28BDE50200FF7844 /* TabBarController.swift */; };
 		1443C2BE28BDE5E000FF7844 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1443C2BD28BDE5E000FF7844 /* SnapKit */; };
 		1443C2C128BDE5FB00FF7844 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 1443C2C028BDE5FB00FF7844 /* Kingfisher */; };
 /* End PBXBuildFile section */
@@ -23,7 +23,7 @@
 		1443C2AF28BDE15900FF7844 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1443C2B228BDE15900FF7844 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1443C2B428BDE15900FF7844 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1443C2BA28BDE50200FF7844 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1443C2BA28BDE50200FF7844 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,7 +63,7 @@
 				1443C2AF28BDE15900FF7844 /* Assets.xcassets */,
 				1443C2B128BDE15900FF7844 /* LaunchScreen.storyboard */,
 				1443C2B428BDE15900FF7844 /* Info.plist */,
-				1443C2BA28BDE50200FF7844 /* ViewController.swift */,
+				1443C2BA28BDE50200FF7844 /* TabBarController.swift */,
 			);
 			path = AppStoreStyleService;
 			sourceTree = "<group>";
@@ -146,7 +146,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1443C2BB28BDE50200FF7844 /* ViewController.swift in Sources */,
+				1443C2BB28BDE50200FF7844 /* TabBarController.swift in Sources */,
 				1443C2A728BDE15800FF7844 /* AppDelegate.swift in Sources */,
 				1443C2A928BDE15800FF7844 /* SceneDelegate.swift in Sources */,
 			);
