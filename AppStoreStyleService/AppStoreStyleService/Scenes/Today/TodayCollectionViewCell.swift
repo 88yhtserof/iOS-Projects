@@ -61,7 +61,7 @@ final class TodayCollectionViewCell: UICollectionViewCell {
 private extension TodayCollectionViewCell {
     func setUpSubView() {
         [imageView, titleLabel, subtitleLabel, descriptionLabel].forEach{
-            //self.content.addSubView($0)와 차이점이 뭘까
+            //self.contentView.addSubview($0) 와 차이점이 뭘까
             self.addSubview($0)
         }
         
