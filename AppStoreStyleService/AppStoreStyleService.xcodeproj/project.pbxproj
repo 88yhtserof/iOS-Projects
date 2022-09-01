@@ -23,6 +23,7 @@
 		14C5E1B128C086CF00BE469B /* SeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C5E1B028C086CF00BE469B /* SeparatorView.swift */; };
 		14C5E1B328C08B0400BE469B /* RankingFeatureSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C5E1B228C08B0400BE469B /* RankingFeatureSectionView.swift */; };
 		14C5E1B528C0988A00BE469B /* RankingFeatureCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C5E1B428C0988A00BE469B /* RankingFeatureCollectionViewCell.swift */; };
+		14C5E1B928C0A39600BE469B /* ExchangeCodeButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C5E1B828C0A39600BE469B /* ExchangeCodeButtonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		14C5E1B028C086CF00BE469B /* SeparatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorView.swift; sourceTree = "<group>"; };
 		14C5E1B228C08B0400BE469B /* RankingFeatureSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingFeatureSectionView.swift; sourceTree = "<group>"; };
 		14C5E1B428C0988A00BE469B /* RankingFeatureCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingFeatureCollectionViewCell.swift; sourceTree = "<group>"; };
+		14C5E1B828C0A39600BE469B /* ExchangeCodeButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeCodeButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 				14C5E1B028C086CF00BE469B /* SeparatorView.swift */,
 				14C5E1B228C08B0400BE469B /* RankingFeatureSectionView.swift */,
 				14C5E1B428C0988A00BE469B /* RankingFeatureCollectionViewCell.swift */,
+				14C5E1B828C0A39600BE469B /* ExchangeCodeButtonView.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -199,6 +202,7 @@
 			files = (
 				1443C2C728BDEFF900FF7844 /* TodayViewController.swift in Sources */,
 				1443C2BB28BDE50200FF7844 /* TabBarController.swift in Sources */,
+				14C5E1B928C0A39600BE469B /* ExchangeCodeButtonView.swift in Sources */,
 				14C5E1B128C086CF00BE469B /* SeparatorView.swift in Sources */,
 				1443C2A728BDE15800FF7844 /* AppDelegate.swift in Sources */,
 				1443C2CB28BE0FA300FF7844 /* TodayCollectionHeaderView.swift in Sources */,
