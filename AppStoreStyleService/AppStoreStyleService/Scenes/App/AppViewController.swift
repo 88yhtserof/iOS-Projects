@@ -19,21 +19,24 @@ final class AppViewController: UIViewController {
         stackView.distribution = .equalSpacing
         stackView.spacing = 0.0
         
-        //임시 View
-        let featureSectionView = UIView()
-        let rankingFeatureSectionView = UIView()
-        let exchangeCodeButtonView = UIView()
+        //frame을 사용하는 init 메서드에서만 setUpViews를 호출하기 때문에 아래 객체도 frame을 갖는 init 메서드를 사용해 생성하자
+        let featureSectionView = FeatureSectionView(frame: .zero)
+        let rankingFeatureSectionView = RankingFeatureSectionView(frame: .zero)
+        let exchangeCodeButtonView = ExchangeCodeButtonView(frame: .zero)
         
-        featureSectionView.backgroundColor = .systemPurple
-        rankingFeatureSectionView.backgroundColor = .systemTeal
-        exchangeCodeButtonView.backgroundColor = .systemYellow
-        
-        [featureSectionView, rankingFeatureSectionView, exchangeCodeButtonView].forEach {
-            stackView.addArrangedSubview($0)
-            $0.snp.makeConstraints {
-                $0.height.equalTo(500.0)
-            }
+        let spacingView = UIView() //하단 여유 공간 확보
+        spacingView.snp.makeConstraints {
+            $0.height.equalTo(100.0)
         }
+        
+        [
+            featureSectionView,
+            rankingFeatureSectionView,
+            exchangeCodeButtonView,
+            spacingView
+        ].forEach {
+                stackView.addArrangedSubview($0)
+            }
         
         return stackView
     }()
