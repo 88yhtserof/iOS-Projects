@@ -79,7 +79,7 @@ private extension FeatureSectionView {
         ].forEach{ addSubview($0) }
         
         collectionView.snp.makeConstraints {
-            $0.leading.trailing.bottom.equalToSuperview()
+            $0.leading.trailing.equalToSuperview()
             $0.top.equalToSuperview().inset(16.0)
             $0.height.equalTo(self.snp.width)
         }
