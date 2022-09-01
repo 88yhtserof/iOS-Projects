@@ -20,6 +20,7 @@
 		1443C2CE28BE44C300FF7844 /* AppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1443C2CD28BE44C300FF7844 /* AppViewController.swift */; };
 		14C5E1AD28C0725600BE469B /* FeatureSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C5E1AC28C0725600BE469B /* FeatureSectionView.swift */; };
 		14C5E1AF28C080DF00BE469B /* FeatureSectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C5E1AE28C080DF00BE469B /* FeatureSectionCollectionViewCell.swift */; };
+		14C5E1B128C086CF00BE469B /* SeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C5E1B028C086CF00BE469B /* SeparatorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		1443C2CD28BE44C300FF7844 /* AppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewController.swift; sourceTree = "<group>"; };
 		14C5E1AC28C0725600BE469B /* FeatureSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureSectionView.swift; sourceTree = "<group>"; };
 		14C5E1AE28C080DF00BE469B /* FeatureSectionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureSectionCollectionViewCell.swift; sourceTree = "<group>"; };
+		14C5E1B028C086CF00BE469B /* SeparatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				1443C2CD28BE44C300FF7844 /* AppViewController.swift */,
 				14C5E1AC28C0725600BE469B /* FeatureSectionView.swift */,
 				14C5E1AE28C080DF00BE469B /* FeatureSectionCollectionViewCell.swift */,
+				14C5E1B028C086CF00BE469B /* SeparatorView.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -190,6 +193,7 @@
 			files = (
 				1443C2C728BDEFF900FF7844 /* TodayViewController.swift in Sources */,
 				1443C2BB28BDE50200FF7844 /* TabBarController.swift in Sources */,
+				14C5E1B128C086CF00BE469B /* SeparatorView.swift in Sources */,
 				1443C2A728BDE15800FF7844 /* AppDelegate.swift in Sources */,
 				1443C2CB28BE0FA300FF7844 /* TodayCollectionHeaderView.swift in Sources */,
 				1443C2CE28BE44C300FF7844 /* AppViewController.swift in Sources */,
