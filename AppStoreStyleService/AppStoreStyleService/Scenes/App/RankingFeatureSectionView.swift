@@ -9,7 +9,7 @@ import SnapKit
 import UIKit
 
 final class RankingFeatureSectionView: UIView {
-    private let cellHeight: CGFloat = 30.0
+    //private let cellHeight: CGFloat = 30.0
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
@@ -42,7 +42,7 @@ final class RankingFeatureSectionView: UIView {
         collectionView.isPagingEnabled = true
         collectionView.backgroundColor = .systemBackground
         collectionView.showsHorizontalScrollIndicator = false
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "RankingFeatureSectionCollectionViewCell")
+        collectionView.register(RankingSectionCollectionViewCell.self, forCellWithReuseIdentifier: "RankingFeatureSectionCollectionViewCell")
         
         return collectionView
     }()
@@ -62,7 +62,7 @@ final class RankingFeatureSectionView: UIView {
 
 extension RankingFeatureSectionView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: collectionView.frame.width - 32.0, height: cellHeight)
+        CGSize(width: collectionView.frame.width - 32.0, height: RankingSectionCollectionViewCell.height)
     }
 }
 
@@ -72,9 +72,9 @@ extension RankingFeatureSectionView: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RankingFeatureSectionCollectionViewCell", for: indexPath)
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RankingFeatureSectionCollectionViewCell", for: indexPath) as? RankingSectionCollectionViewCell else { return UICollectionViewCell() }
         
-        cell.backgroundColor = .systemPurple
+        cell.setUp()
         
         return cell
     }
@@ -102,7 +102,7 @@ private extension RankingFeatureSectionView {
         collectionView.snp.makeConstraints {
             $0.top.equalTo(titleLabel.snp.bottom).offset(16.0)
             $0.leading.trailing.equalToSuperview()
-            $0.height.equalTo(cellHeight * 3)
+            $0.height.equalTo(RankingSectionCollectionViewCell.height * 3)
         }
         
         separator.snp.makeConstraints {
