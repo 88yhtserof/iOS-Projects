@@ -21,6 +21,7 @@
 		14C5E1AD28C0725600BE469B /* FeatureSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C5E1AC28C0725600BE469B /* FeatureSectionView.swift */; };
 		14C5E1AF28C080DF00BE469B /* FeatureSectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C5E1AE28C080DF00BE469B /* FeatureSectionCollectionViewCell.swift */; };
 		14C5E1B128C086CF00BE469B /* SeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C5E1B028C086CF00BE469B /* SeparatorView.swift */; };
+		14C5E1B328C08B0400BE469B /* RankingFeatureSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C5E1B228C08B0400BE469B /* RankingFeatureSectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		14C5E1AC28C0725600BE469B /* FeatureSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureSectionView.swift; sourceTree = "<group>"; };
 		14C5E1AE28C080DF00BE469B /* FeatureSectionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureSectionCollectionViewCell.swift; sourceTree = "<group>"; };
 		14C5E1B028C086CF00BE469B /* SeparatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorView.swift; sourceTree = "<group>"; };
+		14C5E1B228C08B0400BE469B /* RankingFeatureSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingFeatureSectionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				14C5E1AC28C0725600BE469B /* FeatureSectionView.swift */,
 				14C5E1AE28C080DF00BE469B /* FeatureSectionCollectionViewCell.swift */,
 				14C5E1B028C086CF00BE469B /* SeparatorView.swift */,
+				14C5E1B228C08B0400BE469B /* RankingFeatureSectionView.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -201,6 +204,7 @@
 				1443C2A928BDE15800FF7844 /* SceneDelegate.swift in Sources */,
 				1443C2C928BDF53700FF7844 /* TodayCollectionViewCell.swift in Sources */,
 				14C5E1AD28C0725600BE469B /* FeatureSectionView.swift in Sources */,
+				14C5E1B328C08B0400BE469B /* RankingFeatureSectionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
