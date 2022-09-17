@@ -9,7 +9,7 @@
 | ---- | ---- | ---- |
 | | ![Simulator Screen Shot - iPhone 11 - 2022-08-12 at 00 07 51](https://user-images.githubusercontent.com/65601189/185290290-48089091-15e9-4bd8-ab0b-95e43b4abd30.png)| ![Simulator Screen Recording - iPhone 11 - 2022-08-21 at 17 40 49](https://user-images.githubusercontent.com/65601189/186073116-5ec4ecf1-db89-4247-a6fa-a36f535b6dfb.gif) |
 
-|브루어리 소개 서비스| | |
+|브루어리 소개 서비스| 앱 스토어 스타일 서비스 | |
 | ---- | ---- | ---- |
-|![Simulator Screen Recording - iPhone 11 - 2022-08-28 at 16 29 34](https://user-images.githubusercontent.com/65601189/187063273-1d808584-f6bb-47a7-828f-a3b885640696.gif) | | |
+|![Simulator Screen Recording - iPhone 11 - 2022-08-28 at 16 29 34](https://user-images.githubusercontent.com/65601189/187063273-1d808584-f6bb-47a7-828f-a3b885640696.gif) | ![Simulator Screen Recording - iPhone 11 - 2022-09-17 at 16 24 42](https://user-images.githubusercontent.com/65601189/190845770-e78dc4f4-71f8-400d-a700-5f1478e20f79.gif) | |
 
