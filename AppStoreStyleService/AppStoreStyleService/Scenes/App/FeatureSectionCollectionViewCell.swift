@@ -44,12 +44,18 @@ final class FeatureSectionCollectionViewCell: UICollectionViewCell {
         return imageView
     }()
     
-    func setUp() {
+    func setUp(feature: FeatureModel) {
         setUpLayout()
         
-        typeLabel.text = "type"
-        appNameLabel.text = "AppName"
-        descriptionLabel.text = "description"
+        typeLabel.text = feature.type
+        appNameLabel.text = feature.appName
+        descriptionLabel.text = feature.description
+        
+        //kingfisher를 사용해 이미지 설정
+        if let imageURL = URL(string: feature.imageURL) {
+            imageView.kf.setImage(with: imageURL)
+        }
+        
         imageView.backgroundColor = .systemPurple
     }
 }
