@@ -6,6 +6,7 @@
 //
 
 import SnapKit
+import Kingfisher
 import UIKit
 
 final class TodayCollectionViewCell: UICollectionViewCell {
@@ -45,16 +46,21 @@ final class TodayCollectionViewCell: UICollectionViewCell {
         return imageView
     }()
     
-    func setUp() {
+    func setUp(today: TodayModel) {
         setUpSubView()
         
         self.layer.shadowColor = UIColor.black.cgColor
         self.layer.shadowOpacity = 0.3
         self.layer.cornerRadius = 10
         
-        subtitleLabel.text = "서브타이틀"
-        descriptionLabel.text = "설명입니다."
-        titleLabel.text = "앱의 이름입니다."
+        subtitleLabel.text = today.subTitle
+        descriptionLabel.text =  today.description
+        titleLabel.text = today.title
+        
+        //kingfisher를 사용해 이미지 설정
+        if let imageURL = URL(string: today.imageURL) {
+            imageView.kf.setImage(with: imageURL)
+        }
     }
 }
 

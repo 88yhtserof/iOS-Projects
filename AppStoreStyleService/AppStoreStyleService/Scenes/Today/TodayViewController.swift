@@ -10,6 +10,7 @@ import UIKit
 
 //TodayViewController를 계승할 class가 없을 예정이니 final로 명시해준다.
 final class TodayViewController: UIViewController {
+    private var todayList: [TodayModel] = []
     
     private lazy var collectionView: UICollectionView = {
         //collectionView는 layout을 반드시 가지고 있는다.
@@ -34,18 +35,24 @@ final class TodayViewController: UIViewController {
         collectionView.snp.makeConstraints{
             $0.edges.equalToSuperview()
         }
+        
+        //서버에서 데이터를 받아온다면 view 업데이트가 계속 필요해 viewWillAppear에서 호출해야하지만,
+        //로컬 데이터기 때문에 ViewDidLoad에서 호출
+        self.fetchData()
     }
 }
 
 extension TodayViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        print("\(todayList.count)")
+        return todayList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "todayCell", for: indexPath) as? TodayCollectionViewCell else { return UICollectionViewCell()}
         
-        cell.setUp()
+        let today = todayList[indexPath.item]
+        cell.setUp(today: today)
         
         return cell
     }
@@ -81,5 +88,18 @@ extension TodayViewController: UICollectionViewDelegateFlowLayout {
         let appDetailViewController = AppDetailViewController()
         
         self.present(appDetailViewController, animated: true)
+    }
+}
+
+private extension TodayViewController {
+    func fetchData() {
+        guard let url = Bundle.main.url(forResource: "Today", withExtension: "plist") else { return }
+        //데이터를 가져와 디코딩 해주기
+        do {
+            let data = try Data(contentsOf: url)
+            let result = try PropertyListDecoder().decode([TodayModel].self, from: data) //data에서 데이터를 [TodayModel] 타입으로 디코딩 추출
+            todayList = result
+        } catch {
+        }
     }
 }
