@@ -51,6 +51,7 @@ final class AppDetailViewController: UIViewController {
         let button = UIButton()
         button.setImage(UIImage(systemName: "square.and.arrow.up"), for: .normal)
         button.tintColor = .systemBlue
+        button.addTarget(self, action: #selector(didTapShareButton), for: .touchUpInside)
         
         return button
     }()
@@ -119,5 +120,12 @@ private extension AppDetailViewController {
             $0.trailing.equalTo(titleLabel.snp.trailing)
             $0.height.width.equalTo(32.0)
         }
+    }
+    
+    @objc func didTapShareButton() {
+        //UIActivityViewController를 사용해 APP 이름 기본 메세지에 공유하기
+        let activityItem = [today.title] //공유할 아이템
+        let activityViewController = UIActivityViewController(activityItems: activityItem, applicationActivities: nil)
+        present(activityViewController, animated: true)
     }
 }
