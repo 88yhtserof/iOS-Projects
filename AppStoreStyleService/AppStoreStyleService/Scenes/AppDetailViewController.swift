@@ -9,6 +9,7 @@ import SnapKit
 import UIKit
 
 final class AppDetailViewController: UIViewController {
+    private var today: TodayModel //init을 통해 값이 초기화되도록 설정
     private let appIconImageView: UIImageView = {
         let imageView = UIImageView()
         
@@ -54,14 +55,24 @@ final class AppDetailViewController: UIViewController {
         return button
     }()
     
+    init(today: TodayModel) {
+        self.today = today
+        
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.view.backgroundColor = .systemBackground //dark mode 반영 가능
         setupViews()
         
-        titleLabel.text = "제목"
-        subTitleLabel.text = "부제목"
+        titleLabel.text = today.title
+        subTitleLabel.text = today.subTitle
         appIconImageView.backgroundColor = .systemGray
     }
 }
