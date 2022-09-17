@@ -44,7 +44,6 @@ final class TodayViewController: UIViewController {
 
 extension TodayViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print("\(todayList.count)")
         return todayList.count
     }
     
