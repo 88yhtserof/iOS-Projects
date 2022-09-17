@@ -9,6 +9,8 @@ import SnapKit
 import UIKit
 
 final class RankingFeatureSectionView: UIView {
+    private var rankingFeatureList: [RankingFeatureModel] = []
+    
     //private let cellHeight: CGFloat = 30.0
     
     private lazy var titleLabel: UILabel = {
@@ -53,6 +55,8 @@ final class RankingFeatureSectionView: UIView {
         super.init(frame: frame)
         
         setUpViews()
+        self.fetchData()
+        collectionView.reloadData()
     }
     
     required init?(coder: NSCoder) {
@@ -68,13 +72,14 @@ extension RankingFeatureSectionView: UICollectionViewDelegateFlowLayout {
 
 extension RankingFeatureSectionView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 9
+        return rankingFeatureList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RankingFeatureSectionCollectionViewCell", for: indexPath) as? RankingSectionCollectionViewCell else { return UICollectionViewCell() }
         
-        cell.setUp()
+        let rankingFeature = rankingFeatureList[indexPath.item]
+        cell.setUp(rankingFeature: rankingFeature)
         
         return cell
     }
@@ -109,5 +114,15 @@ private extension RankingFeatureSectionView {
             $0.top.equalTo(collectionView.snp.bottom).offset(16.0)
             $0.bottom.leading.trailing.equalToSuperview()
         }
+    }
+    
+    func fetchData() {
+        guard let url = Bundle.main.url(forResource: "RankingFeature", withExtension: "plist") else { return }
+        
+        do {
+            let data = try Data(contentsOf: url)
+            let result = try PropertyListDecoder().decode([RankingFeatureModel].self, from: data)
+            rankingFeatureList = result
+        } catch {}
     }
 }
