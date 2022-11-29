@@ -8,6 +8,18 @@
 import UIKit
 
 class StationDetailViewController: UIViewController {
+    private lazy var refreshControl: UIRefreshControl = {
+       let refreshControl = UIRefreshControl()
+        let fetchDataAction = UIAction(handler: {_ in
+            print("Fetch Data")
+            refreshControl.endRefreshing()
+        })
+        
+        refreshControl.addAction(fetchDataAction, for: .valueChanged)
+        
+        return refreshControl
+    }()
+    
     private lazy var collectionView: UICollectionView = {
         let layout = createBasicListLayout()
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -15,6 +27,8 @@ class StationDetailViewController: UIViewController {
         //UITableView와는 다르게, collectionView cell은 여기서 register
         collectionView.register(StationDetailCollectionViewCell.self, forCellWithReuseIdentifier: "StationDetailCollectionViewCell")
         collectionView.dataSource = self
+        
+        collectionView.refreshControl = refreshControl
         
         return collectionView
     }()
