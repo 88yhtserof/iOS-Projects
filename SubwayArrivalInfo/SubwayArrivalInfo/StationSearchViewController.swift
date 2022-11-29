@@ -22,6 +22,11 @@ class StationSearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        configureNavigation()
+        configureView()
+    }
+    
+    private func configureNavigation() {
         navigationController?.navigationBar.prefersLargeTitles = true //큰 제목 사용
         navigationItem.title = "지하철 도착 정보"
         
@@ -31,11 +36,9 @@ class StationSearchViewController: UIViewController {
         searchController.searchBar.delegate = self
         
         navigationItem.searchController = searchController
-        
-        ConfigureView()
     }
     
-    private func ConfigureView() {
+    private func configureView() {
         view.addSubview(tableView)
         tableView.snp.makeConstraints{ make in
             make.edges.equalToSuperview()
