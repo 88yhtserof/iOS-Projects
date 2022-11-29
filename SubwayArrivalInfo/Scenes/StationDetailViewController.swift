@@ -13,7 +13,7 @@ class StationDetailViewController: UIViewController {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         
         //UITableView와는 다르게, collectionView cell은 여기서 register
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "StationDetailCollectionViewCell")
+        collectionView.register(StationDetailCollectionViewCell.self, forCellWithReuseIdentifier: "StationDetailCollectionViewCell")
         collectionView.dataSource = self
         
         return collectionView
@@ -59,15 +59,18 @@ extension StationDetailViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "StationDetailCollectionViewCell", for: indexPath)
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "StationDetailCollectionViewCell", for: indexPath) as? StationDetailCollectionViewCell else { return UICollectionViewCell() }
         
-        var content = UIListContentConfiguration.cell()
-        content.text = "\(indexPath.row)"
-        content.secondaryText = "\(indexPath.row)번 collectionViewCell"
-        content.image = .init(systemName: "bus")
-        content.imageProperties.tintColor = .systemBlue
+        //Default Cell 사용
+//        var content = UIListContentConfiguration.cell()
+//        content.text = "\(indexPath.row)"
+//        content.secondaryText = "\(indexPath.row)번 collectionViewCell"
+//        content.image = .init(systemName: "bus")
+//        content.imageProperties.tintColor = .systemBlue
+//
+//        cell.contentConfiguration = content
         
-        cell.contentConfiguration = content
+        cell.configureCell()
         
         return cell
     }
