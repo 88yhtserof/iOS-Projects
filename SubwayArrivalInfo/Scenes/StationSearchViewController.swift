@@ -14,6 +14,7 @@ class StationSearchViewController: UIViewController {
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.dataSource = self
+        tableView.delegate = self
         tableView.isHidden = true
         
         return tableView
@@ -58,6 +59,14 @@ extension StationSearchViewController: UISearchBarDelegate {
         numberOfStation = 0
         tableView.isHidden = true
         tableView.reloadData()
+    }
+}
+
+extension StationSearchViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let stationDetailViewController = StationDetailViewController()
+        
+        self.navigationController?.pushViewController(stationDetailViewController, animated: true)
     }
 }
 
