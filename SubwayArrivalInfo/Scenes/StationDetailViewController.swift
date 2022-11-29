@@ -9,7 +9,7 @@ import UIKit
 
 class StationDetailViewController: UIViewController {
     private lazy var refreshControl: UIRefreshControl = {
-       let refreshControl = UIRefreshControl()
+        let refreshControl = UIRefreshControl()
         let fetchDataAction = UIAction(handler: {_ in
             print("Fetch Data")
             refreshControl.endRefreshing()
@@ -32,7 +32,7 @@ class StationDetailViewController: UIViewController {
         
         return collectionView
     }()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -76,13 +76,13 @@ extension StationDetailViewController: UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "StationDetailCollectionViewCell", for: indexPath) as? StationDetailCollectionViewCell else { return UICollectionViewCell() }
         
         //Default Cell 사용
-//        var content = UIListContentConfiguration.cell()
-//        content.text = "\(indexPath.row)"
-//        content.secondaryText = "\(indexPath.row)번 collectionViewCell"
-//        content.image = .init(systemName: "bus")
-//        content.imageProperties.tintColor = .systemBlue
-//
-//        cell.contentConfiguration = content
+        //        var content = UIListContentConfiguration.cell()
+        //        content.text = "\(indexPath.row)"
+        //        content.secondaryText = "\(indexPath.row)번 collectionViewCell"
+        //        content.image = .init(systemName: "bus")
+        //        content.imageProperties.tintColor = .systemBlue
+        //
+        //        cell.contentConfiguration = content
         
         cell.configureCell()
         
