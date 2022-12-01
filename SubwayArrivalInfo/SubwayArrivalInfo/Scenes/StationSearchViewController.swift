@@ -5,6 +5,7 @@
 //  Created by 임윤휘 on 2022/11/29.
 //
 
+import Alamofire
 import SnapKit
 import UIKit
 
@@ -25,6 +26,8 @@ class StationSearchViewController: UIViewController {
         
         configureNavigation()
         configureView()
+        
+        requestStationName()
     }
     
     private func configureNavigation() {
@@ -44,6 +47,22 @@ class StationSearchViewController: UIViewController {
         tableView.snp.makeConstraints{ make in
             make.edges.equalToSuperview()
         }
+    }
+    
+    private func requestStationName() {
+        let urlString = "http://openapi.seoul.go.kr:8088/sample/json/SearchInfoBySubwayNameService/1/5/종로3가"
+        
+        //종로3가 한글이 인코딩이 되면 글자가 깨짐. 따라서 따로 인코딩처리를 해주어야한다.
+        AF
+            .request(urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "")
+            .responseDecodable(of: StationResponseModel.self) { response in
+                //response.result로 성공 실패 모두 들어오기 때문에 guard case문으로 구분
+                //let result: Result<StationResponseModel, AFError>
+                //즉 성공이면 통과, 실패면 리턴
+                guard case .success(let data) = response.result else { return }
+                
+                print(data.stations)
+            }
     }
 }
 
