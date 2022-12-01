@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1421E8A329385518007F6166 /* StationResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1421E8A229385518007F6166 /* StationResponseModel.swift */; };
+		1421E8A82938627B007F6166 /* StationArrivalDataResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1421E8A72938627B007F6166 /* StationArrivalDataResponseModel.swift */; };
 		142F4DD42935AF4700B6F69E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142F4DD32935AF4700B6F69E /* AppDelegate.swift */; };
 		142F4DD62935AF4700B6F69E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142F4DD52935AF4700B6F69E /* SceneDelegate.swift */; };
 		142F4DD82935AF4700B6F69E /* StationSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142F4DD72935AF4700B6F69E /* StationSearchViewController.swift */; };
@@ -21,6 +22,7 @@
 
 /* Begin PBXFileReference section */
 		1421E8A229385518007F6166 /* StationResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationResponseModel.swift; sourceTree = "<group>"; };
+		1421E8A72938627B007F6166 /* StationArrivalDataResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationArrivalDataResponseModel.swift; sourceTree = "<group>"; };
 		142F4DD02935AF4700B6F69E /* SubwayArrivalInfo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SubwayArrivalInfo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		142F4DD32935AF4700B6F69E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		142F4DD52935AF4700B6F69E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +51,7 @@
 			isa = PBXGroup;
 			children = (
 				1421E8A229385518007F6166 /* StationResponseModel.swift */,
+				1421E8A72938627B007F6166 /* StationArrivalDataResponseModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -174,6 +177,7 @@
 				142F4DEF2935D54600B6F69E /* StationDetailViewController.swift in Sources */,
 				1421E8A329385518007F6166 /* StationResponseModel.swift in Sources */,
 				142F4DD82935AF4700B6F69E /* StationSearchViewController.swift in Sources */,
+				1421E8A82938627B007F6166 /* StationArrivalDataResponseModel.swift in Sources */,
 				142F4DD42935AF4700B6F69E /* AppDelegate.swift in Sources */,
 				142F4DF12936155500B6F69E /* StationDetailCollectionViewCell.swift in Sources */,
 				142F4DD62935AF4700B6F69E /* SceneDelegate.swift in Sources */,

@@ -5,17 +5,29 @@
 //  Created by 임윤휘 on 2022/11/29.
 //
 
+import Alamofire
 import UIKit
 
 class StationDetailViewController: UIViewController {
     private lazy var refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
-        let fetchDataAction = UIAction(handler: {_ in
-            print("Fetch Data")
-            refreshControl.endRefreshing()
-        })
-        
-        refreshControl.addAction(fetchDataAction, for: .valueChanged)
+//        let fetchDataAction = UIAction(handler: {_ in
+//            print("Fetch Data")
+//            //refreshControl.endRefreshing()
+//            let urlString = "http://swopenapi.seoul.go.kr/api/subway/sample/json/realtimeStationArrival/0/5/종로3가"
+//
+//            AF
+//                .request(urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "")
+//                .responseDecodable(of: StationArrivalDataResponseModel.self) { response in
+//                    guard case .success(let data) = response.result else { return }
+//
+//                    print(data.realTimeArriavalList)
+//                }
+//
+//        })
+//
+//        refreshControl.addAction(fetchDataAction, for: .valueChanged)
+        refreshControl.addTarget(self, action: #selector(fetchData), for: .valueChanged)
         
         return refreshControl
     }()
@@ -37,6 +49,8 @@ class StationDetailViewController: UIViewController {
         super.viewDidLoad()
         
         configureView()
+        
+        fetchData()
     }
     
     //https://developer.apple.com/documentation/uikit/uicollectionviewcompositionallayout
@@ -63,6 +77,26 @@ class StationDetailViewController: UIViewController {
         collectionView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
+    }
+    
+    @objc private func fetchData() {
+        print("Fetch Data")
+        
+        //API에서 '역'이란 단어는 무조건 제외하기 때문에 따로 처리 예시) 서울역
+        let stationName = "종로3가역"
+        let urlString = "http://swopenapi.seoul.go.kr/api/subway/sample/json/realtimeStationArrival/0/5/\(stationName.replacingOccurrences(of: "역", with: ""))"
+        
+        AF
+            .request(urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "")
+            .responseDecodable(of: StationArrivalDataResponseModel.self) { [weak self] response in
+                //메모리 누수 방지를 위해 weak self
+                //서버의 응답이 실패하든 아니든 일단 새로고침 멈춤
+                self?.refreshControl.endRefreshing()
+                guard case .success(let data) = response.result else {
+                    print(response.result)
+                    return }
+                print(data.realtimeArrivalList)
+            }
     }
 }
 
