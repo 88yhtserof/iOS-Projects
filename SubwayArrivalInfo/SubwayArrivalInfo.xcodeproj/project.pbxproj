@@ -45,10 +45,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1421E8A429385BFC007F6166 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1421E8A229385518007F6166 /* StationResponseModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		142F4DC72935AF4600B6F69E = {
 			isa = PBXGroup;
 			children = (
-				142F4DED2935D52D00B6F69E /* Scenes */,
 				142F4DD22935AF4700B6F69E /* SubwayArrivalInfo */,
 				142F4DD12935AF4700B6F69E /* Products */,
 			);
@@ -65,12 +72,13 @@
 		142F4DD22935AF4700B6F69E /* SubwayArrivalInfo */ = {
 			isa = PBXGroup;
 			children = (
+				1421E8A429385BFC007F6166 /* Model */,
+				142F4DED2935D52D00B6F69E /* Scenes */,
 				142F4DD32935AF4700B6F69E /* AppDelegate.swift */,
 				142F4DD52935AF4700B6F69E /* SceneDelegate.swift */,
 				142F4DDC2935AF4900B6F69E /* Assets.xcassets */,
 				142F4DDE2935AF4900B6F69E /* LaunchScreen.storyboard */,
 				142F4DE12935AF4900B6F69E /* Info.plist */,
-				1421E8A229385518007F6166 /* StationResponseModel.swift */,
 			);
 			path = SubwayArrivalInfo;
 			sourceTree = "<group>";
