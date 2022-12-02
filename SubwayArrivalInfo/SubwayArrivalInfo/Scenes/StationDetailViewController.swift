@@ -8,6 +8,7 @@
 import Alamofire
 import UIKit
 
+// TODO: - 도착 정보 표시 후, 1분 뒤에 자동으로 서버에 요청하는 코드 구현하기 Hint: Timer
 class StationDetailViewController: UIViewController {
     private let station: Station
     private var realTimeArrivalList: [StationArrivalDataResponseModel.RealTimeArrivalList] = []
