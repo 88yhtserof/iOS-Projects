@@ -10,7 +10,7 @@ import SnapKit
 import UIKit
 
 class StationSearchViewController: UIViewController {
-    private var numberOfStation = 0
+    private var stations: [Station] = []
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
@@ -26,8 +26,6 @@ class StationSearchViewController: UIViewController {
         
         configureNavigation()
         configureView()
-        
-        requestStationName()
     }
     
     private func configureNavigation() {
@@ -49,19 +47,23 @@ class StationSearchViewController: UIViewController {
         }
     }
     
-    private func requestStationName() {
-        let urlString = "http://openapi.seoul.go.kr:8088/sample/json/SearchInfoBySubwayNameService/1/5/종로3가"
+    private func requestStationName(from stationName: String) {
+        let urlString = "http://openapi.seoul.go.kr:8088/sample/json/SearchInfoBySubwayNameService/1/5/\(stationName)"
         
         //종로3가 한글이 인코딩이 되면 글자가 깨짐. 따라서 따로 인코딩처리를 해주어야한다.
         AF
             .request(urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "")
-            .responseDecodable(of: StationResponseModel.self) { response in
+            .responseDecodable(of: StationResponseModel.self) { [weak self] response in
                 //response.result로 성공 실패 모두 들어오기 때문에 guard case문으로 구분
                 //let result: Result<StationResponseModel, AFError>
                 //즉 성공이면 통과, 실패면 리턴
                 guard case .success(let data) = response.result else { return }
                 
-                print(data.stations)
+                //print(data.stations)
+                self?.stations = data.stations
+                DispatchQueue.main.async {
+                    self?.tableView.reloadData()
+                }
             }
     }
 }
@@ -69,15 +71,18 @@ class StationSearchViewController: UIViewController {
 extension StationSearchViewController: UISearchBarDelegate {
     //사용자가 편집을 시작했을 때 호출
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-        numberOfStation = 10
         tableView.isHidden = false
-        tableView.reloadData()
+        self.tableView.reloadData()
     }
     
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-        numberOfStation = 0
         tableView.isHidden = true
-        tableView.reloadData()
+        stations.removeAll()
+    }
+    
+    //검색창의 내용에 조금의 변화가 있으면 호출되는 메서드
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        requestStationName(from: searchText)
     }
 }
 
@@ -91,15 +96,16 @@ extension StationSearchViewController: UITableViewDelegate {
 
 extension StationSearchViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return numberOfStation
+        return stations.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         var content = cell.defaultContentConfiguration()
         
-        content.text = "\(indexPath.row + 1)"
-        content.secondaryText = "\(indexPath.row + 1)번 cell"
+        let station = stations[indexPath.row]
+        content.text = station.stationName
+        content.secondaryText = station.lineNumber
         content.image = .init(systemName: "person.fill")
         content.imageProperties.tintColor = .darkGray
         
