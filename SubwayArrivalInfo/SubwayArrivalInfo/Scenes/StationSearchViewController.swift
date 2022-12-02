@@ -88,7 +88,8 @@ extension StationSearchViewController: UISearchBarDelegate {
 
 extension StationSearchViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let stationDetailViewController = StationDetailViewController()
+        let station = stations[indexPath.row]
+        let stationDetailViewController = StationDetailViewController(station: station)
         
         self.navigationController?.pushViewController(stationDetailViewController, animated: true)
     }

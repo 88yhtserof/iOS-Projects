@@ -50,8 +50,8 @@ class StationDetailCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    func configureCell(){
-        lineLabel.text = "한양대 방면"
-        remainTimeLabel.text = "뚝섬도착"
+    func configureCell(with realTimeArrival: StationArrivalDataResponseModel.RealTimeArrivalList){
+        lineLabel.text = realTimeArrival.line
+        remainTimeLabel.text = realTimeArrival.remainTime
     }
 }

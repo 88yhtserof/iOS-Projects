@@ -9,6 +9,9 @@ import Alamofire
 import UIKit
 
 class StationDetailViewController: UIViewController {
+    private let station: Station
+    private var realTimeArrivalList: [StationArrivalDataResponseModel.RealTimeArrivalList] = []
+    
     private lazy var refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
 //        let fetchDataAction = UIAction(handler: {_ in
@@ -45,6 +48,16 @@ class StationDetailViewController: UIViewController {
         return collectionView
     }()
     
+    init(station: Station) {
+        self.station = station
+        
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -70,7 +83,7 @@ class StationDetailViewController: UIViewController {
     }
     
     private func configureView() {
-        navigationItem.title = "왕십리"
+        navigationItem.title = station.stationName
         
         view.addSubview(collectionView)
         
@@ -83,7 +96,7 @@ class StationDetailViewController: UIViewController {
         print("Fetch Data")
         
         //API에서 '역'이란 단어는 무조건 제외하기 때문에 따로 처리 예시) 서울역
-        let stationName = "종로3가역"
+        let stationName = station.stationName
         let urlString = "http://swopenapi.seoul.go.kr/api/subway/sample/json/realtimeStationArrival/0/5/\(stationName.replacingOccurrences(of: "역", with: ""))"
         
         AF
@@ -95,7 +108,11 @@ class StationDetailViewController: UIViewController {
                 guard case .success(let data) = response.result else {
                     print(response.result)
                     return }
-                print(data.realtimeArrivalList)
+                //print(data.realtimeArrivalList)
+                self?.realTimeArrivalList = data.realtimeArrivalList
+                DispatchQueue.main.async {
+                    self?.collectionView.reloadData()
+                }
             }
     }
 }
@@ -103,7 +120,7 @@ class StationDetailViewController: UIViewController {
 
 extension StationDetailViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return realTimeArrivalList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -118,7 +135,8 @@ extension StationDetailViewController: UICollectionViewDataSource {
         //
         //        cell.contentConfiguration = content
         
-        cell.configureCell()
+        let realTimeArrival = realTimeArrivalList[indexPath.row]
+        cell.configureCell(with: realTimeArrival)
         
         return cell
     }
