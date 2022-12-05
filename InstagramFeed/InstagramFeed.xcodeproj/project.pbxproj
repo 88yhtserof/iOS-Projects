@@ -13,6 +13,7 @@
 		14AE9A26293D8B60004C86BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14AE9A25293D8B60004C86BC /* Assets.xcassets */; };
 		14AE9A29293D8B60004C86BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14AE9A27293D8B60004C86BC /* LaunchScreen.storyboard */; };
 		14AE9A31293D8CD9004C86BC /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AE9A30293D8CD9004C86BC /* TabBarController.swift */; };
+		14AE9A35293D8D5A004C86BC /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 14AE9A34293D8D5A004C86BC /* SnapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14AE9A35293D8D5A004C86BC /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,6 +93,9 @@
 			dependencies = (
 			);
 			name = InstagramFeed;
+			packageProductDependencies = (
+				14AE9A34293D8D5A004C86BC /* SnapKit */,
+			);
 			productName = InstagramFeed;
 			productReference = 14AE9A19293D8B5F004C86BC /* InstagramFeed.app */;
 			productType = "com.apple.product-type.application";
@@ -119,6 +124,9 @@
 				Base,
 			);
 			mainGroup = 14AE9A10293D8B5F004C86BC;
+			packageReferences = (
+				14AE9A33293D8D5A004C86BC /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 14AE9A1A293D8B5F004C86BC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -292,7 +300,6 @@
 				INFOPLIST_FILE = InstagramFeed/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -320,7 +327,6 @@
 				INFOPLIST_FILE = InstagramFeed/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -358,6 +364,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		14AE9A33293D8D5A004C86BC /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = exactVersion;
+				version = 5.6.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		14AE9A34293D8D5A004C86BC /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 14AE9A33293D8D5A004C86BC /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 14AE9A11293D8B5F004C86BC /* Project object */;
 }
