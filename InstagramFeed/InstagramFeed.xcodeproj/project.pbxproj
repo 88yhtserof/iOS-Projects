@@ -14,6 +14,8 @@
 		14AE9A29293D8B60004C86BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14AE9A27293D8B60004C86BC /* LaunchScreen.storyboard */; };
 		14AE9A31293D8CD9004C86BC /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AE9A30293D8CD9004C86BC /* TabBarController.swift */; };
 		14AE9A35293D8D5A004C86BC /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 14AE9A34293D8D5A004C86BC /* SnapKit */; };
+		14AE9A37293D9840004C86BC /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AE9A36293D9840004C86BC /* FeedTableViewCell.swift */; };
+		14AE9A39293E2590004C86BC /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AE9A38293E2590004C86BC /* UIButton+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,8 @@
 		14AE9A28293D8B60004C86BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		14AE9A2A293D8B60004C86BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		14AE9A30293D8CD9004C86BC /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		14AE9A36293D9840004C86BC /* FeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
+		14AE9A38293E2590004C86BC /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +77,8 @@
 			children = (
 				14AE9A30293D8CD9004C86BC /* TabBarController.swift */,
 				14AE9A20293D8B5F004C86BC /* FeedViewController.swift */,
+				14AE9A36293D9840004C86BC /* FeedTableViewCell.swift */,
+				14AE9A38293E2590004C86BC /* UIButton+.swift */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -154,9 +160,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				14AE9A21293D8B5F004C86BC /* FeedViewController.swift in Sources */,
+				14AE9A39293E2590004C86BC /* UIButton+.swift in Sources */,
 				14AE9A31293D8CD9004C86BC /* TabBarController.swift in Sources */,
 				14AE9A1D293D8B5F004C86BC /* AppDelegate.swift in Sources */,
 				14AE9A1F293D8B5F004C86BC /* SceneDelegate.swift in Sources */,
+				14AE9A37293D9840004C86BC /* FeedTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

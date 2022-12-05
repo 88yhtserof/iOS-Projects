@@ -16,6 +16,7 @@ class FeedViewController: UIViewController {
         tableView.separatorStyle = .none//구분선 삭제
         
         tableView.dataSource = self
+        tableView.register(FeedTableViewCell.self, forCellReuseIdentifier: "FeedTableViewCell")
         
         return tableView
     }()
@@ -34,9 +35,10 @@ extension FeedViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "FeedTableViewCell", for: indexPath) as? FeedTableViewCell else { return UITableViewCell() }
         
-        cell.backgroundColor = .darkGray
+        cell.selectionStyle = .none //select 비활성화
+        cell.configureView()
         
         return cell
     }
