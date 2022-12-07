@@ -43,6 +43,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		144E617B29404A810008CB30 /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				14AE9A20293D8B5F004C86BC /* FeedViewController.swift */,
+				14AE9A36293D9840004C86BC /* FeedTableViewCell.swift */,
+			);
+			path = Feed;
+			sourceTree = "<group>";
+		};
+		144E617C29404AA80008CB30 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		14AE9A10293D8B5F004C86BC = {
 			isa = PBXGroup;
 			children = (
@@ -75,9 +91,9 @@
 		14AE9A32293D8CE6004C86BC /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				144E617C29404AA80008CB30 /* Profile */,
+				144E617B29404A810008CB30 /* Feed */,
 				14AE9A30293D8CD9004C86BC /* TabBarController.swift */,
-				14AE9A20293D8B5F004C86BC /* FeedViewController.swift */,
-				14AE9A36293D9840004C86BC /* FeedTableViewCell.swift */,
 				14AE9A38293E2590004C86BC /* UIButton+.swift */,
 			);
 			path = Scene;
