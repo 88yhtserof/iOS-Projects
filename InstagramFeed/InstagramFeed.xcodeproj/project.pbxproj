@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		142BD5A82941919F00CCE737 /* ProfileDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142BD5A72941919F00CCE737 /* ProfileDataView.swift */; };
+		142BD5AA2941AE8500CCE737 /* ProfileFeedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142BD5A92941AE8500CCE737 /* ProfileFeedCollectionViewCell.swift */; };
 		144E617E29404C040008CB30 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144E617D29404C040008CB30 /* ProfileViewController.swift */; };
 		14AE9A1D293D8B5F004C86BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AE9A1C293D8B5F004C86BC /* AppDelegate.swift */; };
 		14AE9A1F293D8B5F004C86BC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AE9A1E293D8B5F004C86BC /* SceneDelegate.swift */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		142BD5A72941919F00CCE737 /* ProfileDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDataView.swift; sourceTree = "<group>"; };
+		142BD5A92941AE8500CCE737 /* ProfileFeedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileFeedCollectionViewCell.swift; sourceTree = "<group>"; };
 		144E617D29404C040008CB30 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		14AE9A19293D8B5F004C86BC /* InstagramFeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstagramFeed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14AE9A1C293D8B5F004C86BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 			children = (
 				144E617D29404C040008CB30 /* ProfileViewController.swift */,
 				142BD5A72941919F00CCE737 /* ProfileDataView.swift */,
+				142BD5A92941AE8500CCE737 /* ProfileFeedCollectionViewCell.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -189,6 +192,7 @@
 				14AE9A1F293D8B5F004C86BC /* SceneDelegate.swift in Sources */,
 				142BD5A82941919F00CCE737 /* ProfileDataView.swift in Sources */,
 				14AE9A37293D9840004C86BC /* FeedTableViewCell.swift in Sources */,
+				142BD5AA2941AE8500CCE737 /* ProfileFeedCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
