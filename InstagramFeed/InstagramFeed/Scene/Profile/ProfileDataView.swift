@@ -14,7 +14,7 @@ final class ProfileDataView: UIView {
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 16.0, weight: .bold)
+        label.font = .systemFont(ofSize: 14.0, weight: .medium)
         label.text = "팔로워"
         
         return label
