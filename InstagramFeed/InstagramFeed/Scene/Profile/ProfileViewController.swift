@@ -64,6 +64,16 @@ class ProfileViewController: UIViewController {
     private let followerDataView = ProfileDataView(title: "팔로워", count: 2_000)
     private let followingDataView = ProfileDataView(title: "팔로잉", count: 23)
     
+    private lazy var collectionView: UICollectionView = {
+        let layout = createFeedCollectionLayout()
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        
+        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
+        collectionView.dataSource = self
+        
+        return collectionView
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -99,7 +109,8 @@ private extension ProfileViewController {
             dataStackView,
             nameLabel,
             descriptionLabel,
-            buttonStackView
+            buttonStackView,
+            collectionView
         ].forEach{ view.addSubview($0) }
         
         let inset: CGFloat = 16.0
@@ -135,5 +146,43 @@ private extension ProfileViewController {
             make.trailing.equalTo(nameLabel.snp.trailing)
 
         }
+        
+        collectionView.snp.makeConstraints{ make in
+            make.top.equalTo(buttonStackView.snp.bottom).offset(inset)
+            make.horizontalEdges.equalToSuperview().inset(inset)
+            make.bottom.equalToSuperview()
+        }
+    }
+    
+    func createFeedCollectionLayout() ->  UICollectionViewCompositionalLayout {
+        let inset = 0.5
+        
+        //아래에 count 3을 이용해 horizontal 기분 이미 한 그룹에 열 3개씩 보여준다고 했지만, item을 정사각형으로 만들어주기 위해 groupHeight에 item.layoutSize.widthDimension 할당해 줄 것이기 때문에 .fractionalWidth(0.3)을 설정해준다.
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.3), heightDimension: .fractionalHeight(1))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        item.contentInsets = NSDirectionalEdgeInsets(top: inset, leading: inset, bottom: inset, trailing: inset)
+        
+        //섹션 내 그룹 사이즈!
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: item.layoutSize.widthDimension)
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 3)
+        
+        let section = NSCollectionLayoutSection(group: group)
+        let layout = UICollectionViewCompositionalLayout(section: section)
+        
+        return layout
+    }
+}
+
+extension ProfileViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 100
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
+        
+        cell.backgroundColor = .lightGray
+        
+        return cell
     }
 }
