@@ -90,9 +90,20 @@ private extension ProfileViewController {
             image: UIImage(systemName: "ellipsis"),
             style: .plain,
             target: self,
-            action: nil
+            action: #selector(didTapRightBarButtonItem)
         )
         navigationItem.rightBarButtonItem = rightBarButton
+    }
+    
+    @objc func didTapRightBarButtonItem() {
+        let actionsheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        [
+            UIAlertAction(title: "회원 정보 변경", style: .default) { _ in print("Edit User Info") },
+            UIAlertAction(title: "탈퇴하기", style: .destructive) { _ in print("Withdraw Instagram")},
+            UIAlertAction(title: "닫기", style: .cancel) { _ in print("Cancel") }
+        ].forEach{ actionsheet.addAction($0) }
+        
+        self.present(actionsheet, animated: true)
     }
     
     func configureView() {
@@ -144,7 +155,7 @@ private extension ProfileViewController {
             make.top.equalTo(descriptionLabel.snp.bottom).offset(12.0)
             make.leading.equalTo(nameLabel.snp.leading)
             make.trailing.equalTo(nameLabel.snp.trailing)
-
+            
         }
         
         collectionView.snp.makeConstraints{ make in
