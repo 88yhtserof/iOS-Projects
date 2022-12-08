@@ -60,6 +60,10 @@ class ProfileViewController: UIViewController {
         return button
     }()
     
+    private let photoDataView = ProfileDataView(title: "게시글", count: 120)
+    private let followerDataView = ProfileDataView(title: "팔로워", count: 2_000)
+    private let followingDataView = ProfileDataView(title: "팔로잉", count: 23)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -86,8 +90,13 @@ private extension ProfileViewController {
         buttonStackView.spacing = 4.0
         buttonStackView.distribution = .fillEqually
         
+        let dataStackView = UIStackView(arrangedSubviews: [photoDataView, followerDataView, followingDataView])
+        dataStackView.spacing = 4.0
+        dataStackView.distribution = .fillEqually
+        
         [
             profileImageView,
+            dataStackView,
             nameLabel,
             descriptionLabel,
             buttonStackView
@@ -100,6 +109,12 @@ private extension ProfileViewController {
             make.leading.equalToSuperview().inset(inset)
             make.width.equalTo(80.0)
             make.height.equalTo(profileImageView.snp.width)
+        }
+        
+        dataStackView.snp.makeConstraints{ make in
+            make.leading.equalTo(profileImageView.snp.trailing).offset(inset)
+            make.trailing.equalToSuperview().inset(inset)
+            make.centerY.equalTo(profileImageView.snp.centerY) //프로필 이미지에 Y축 중앙이 맞도록 설정
         }
         
         nameLabel.snp.makeConstraints{ make in
