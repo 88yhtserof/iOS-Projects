@@ -25,6 +25,7 @@
 		140AD481294DE43D00BD596E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		140AD484294DE43D00BD596E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		140AD486294DE43D00BD596E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		144714C22951AFF300EDCACA /* Traits.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Traits.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		2D97EE64EC6436572005F980 /* Pods_GitHubRepository.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitHubRepository.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		89DADBE403C8B6B5B1B53F23 /* Pods-GitHubRepository.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubRepository.release.xcconfig"; path = "Target Support Files/Pods-GitHubRepository/Pods-GitHubRepository.release.xcconfig"; sourceTree = "<group>"; };
 		B7DA65AA8A6E7283D785B406 /* Pods-GitHubRepository.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubRepository.debug.xcconfig"; path = "Target Support Files/Pods-GitHubRepository/Pods-GitHubRepository.debug.xcconfig"; sourceTree = "<group>"; };
@@ -53,6 +54,7 @@
 		140AD46C294DE43A00BD596E = {
 			isa = PBXGroup;
 			children = (
+				144714C22951AFF300EDCACA /* Traits.playground */,
 				140AD477294DE43A00BD596E /* GitHubRepository */,
 				140AD476294DE43A00BD596E /* Products */,
 				5D14A18357CCADAB1A524035 /* Pods */,
@@ -88,7 +90,6 @@
 				B7DA65AA8A6E7283D785B406 /* Pods-GitHubRepository.debug.xcconfig */,
 				89DADBE403C8B6B5B1B53F23 /* Pods-GitHubRepository.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
