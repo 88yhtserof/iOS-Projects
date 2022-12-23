@@ -58,11 +58,7 @@
 		140AD46C294DE43A00BD596E = {
 			isa = PBXGroup;
 			children = (
-				14438D9929555A3F00C2BC9C /* Observable.playground */,
-				144714C22951AFF300EDCACA /* Traits.playground */,
-				1431AC4E2954092300E74F2D /* Subjects.playground */,
-				1431AC4F2954170000E74F2D /* FilterinngOperators.playground */,
-				1431AC5029542E1200E74F2D /* TransformingOperators.playground */,
+				14438D9A2955601A00C2BC9C /* StudyRxSwift */,
 				140AD477294DE43A00BD596E /* GitHubRepository */,
 				140AD476294DE43A00BD596E /* Products */,
 				5D14A18357CCADAB1A524035 /* Pods */,
@@ -90,6 +86,18 @@
 				140AD486294DE43D00BD596E /* Info.plist */,
 			);
 			path = GitHubRepository;
+			sourceTree = "<group>";
+		};
+		14438D9A2955601A00C2BC9C /* StudyRxSwift */ = {
+			isa = PBXGroup;
+			children = (
+				14438D9929555A3F00C2BC9C /* Observable.playground */,
+				144714C22951AFF300EDCACA /* Traits.playground */,
+				1431AC4E2954092300E74F2D /* Subjects.playground */,
+				1431AC4F2954170000E74F2D /* FilterinngOperators.playground */,
+				1431AC5029542E1200E74F2D /* TransformingOperators.playground */,
+			);
+			path = StudyRxSwift;
 			sourceTree = "<group>";
 		};
 		5D14A18357CCADAB1A524035 /* Pods */ = {
