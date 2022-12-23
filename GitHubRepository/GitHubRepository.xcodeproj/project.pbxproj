@@ -27,6 +27,7 @@
 		140AD486294DE43D00BD596E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1431AC4E2954092300E74F2D /* Subjects.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Subjects.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		1431AC4F2954170000E74F2D /* FilterinngOperators.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = FilterinngOperators.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		1431AC5029542E1200E74F2D /* TransformingOperators.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = TransformingOperators.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		144714C22951AFF300EDCACA /* Traits.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Traits.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		2D97EE64EC6436572005F980 /* Pods_GitHubRepository.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitHubRepository.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		89DADBE403C8B6B5B1B53F23 /* Pods-GitHubRepository.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubRepository.release.xcconfig"; path = "Target Support Files/Pods-GitHubRepository/Pods-GitHubRepository.release.xcconfig"; sourceTree = "<group>"; };
@@ -59,6 +60,7 @@
 				144714C22951AFF300EDCACA /* Traits.playground */,
 				1431AC4E2954092300E74F2D /* Subjects.playground */,
 				1431AC4F2954170000E74F2D /* FilterinngOperators.playground */,
+				1431AC5029542E1200E74F2D /* TransformingOperators.playground */,
 				140AD477294DE43A00BD596E /* GitHubRepository */,
 				140AD476294DE43A00BD596E /* Products */,
 				5D14A18357CCADAB1A524035 /* Pods */,
