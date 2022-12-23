@@ -13,6 +13,7 @@
 		140AD482294DE43D00BD596E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 140AD481294DE43D00BD596E /* Assets.xcassets */; };
 		140AD485294DE43D00BD596E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 140AD483294DE43D00BD596E /* LaunchScreen.storyboard */; };
 		142FE7C9295562FD006AAF73 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 142FE7C8295562FD006AAF73 /* SnapKit */; };
+		142FE7CB29556382006AAF73 /* RepositoryListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142FE7CA29556382006AAF73 /* RepositoryListTableViewCell.swift */; };
 		68EACC12C9BB88789C03A473 /* Pods_GitHubRepository.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D97EE64EC6436572005F980 /* Pods_GitHubRepository.framework */; };
 /* End PBXBuildFile section */
 
@@ -24,6 +25,7 @@
 		140AD481294DE43D00BD596E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		140AD484294DE43D00BD596E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		140AD486294DE43D00BD596E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		142FE7CA29556382006AAF73 /* RepositoryListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryListTableViewCell.swift; sourceTree = "<group>"; };
 		1431AC4E2954092300E74F2D /* Subjects.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Subjects.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		1431AC4F2954170000E74F2D /* FilterinngOperators.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = FilterinngOperators.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		1431AC5029542E1200E74F2D /* TransformingOperators.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = TransformingOperators.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -80,6 +82,7 @@
 				140AD478294DE43A00BD596E /* AppDelegate.swift */,
 				140AD47A294DE43A00BD596E /* SceneDelegate.swift */,
 				140AD47C294DE43A00BD596E /* RepositoryListViewController.swift */,
+				142FE7CA29556382006AAF73 /* RepositoryListTableViewCell.swift */,
 				140AD481294DE43D00BD596E /* Assets.xcassets */,
 				140AD483294DE43D00BD596E /* LaunchScreen.storyboard */,
 				140AD486294DE43D00BD596E /* Info.plist */,
@@ -229,6 +232,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				140AD47D294DE43A00BD596E /* RepositoryListViewController.swift in Sources */,
+				142FE7CB29556382006AAF73 /* RepositoryListTableViewCell.swift in Sources */,
 				140AD479294DE43A00BD596E /* AppDelegate.swift in Sources */,
 				140AD47B294DE43A00BD596E /* SceneDelegate.swift in Sources */,
 			);
