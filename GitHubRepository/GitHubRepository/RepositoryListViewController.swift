@@ -36,7 +36,11 @@ class RepositoryListViewController: UITableViewController {
     }
     
     @objc func refresh() {
-        //네트워크 통식 연결
+        //네트워크 통신 연결
+        DispatchQueue.global(qos: .background).async { [weak self] in
+            guard let self = self else { return }
+            self.fetchRepositories(of: self.organization)
+        }
     }
     
     func fetchRepositories(of organization: String) {
@@ -95,11 +99,25 @@ class RepositoryListViewController: UITableViewController {
 //UITableView DataSource Delegate
 extension RepositoryListViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        //BehaviorSubject는 value값을 꺼낼 수 있다.
+        do {
+            return try repositories.value().count
+        } catch {
+            return 0
+        }
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "RepositoryListTableViewCell", for: indexPath) as? RepositoryListTableViewCell else  { return UITableViewCell() }
+        
+        var currentRepo: Repository? {
+            do {
+                return try repositories.value()[indexPath.row]
+            } catch {
+                return nil
+            }
+        }
+        cell.repository = currentRepo
         
         return cell
     }
