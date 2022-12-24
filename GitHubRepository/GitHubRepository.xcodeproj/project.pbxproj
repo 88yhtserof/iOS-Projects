@@ -14,6 +14,7 @@
 		140AD485294DE43D00BD596E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 140AD483294DE43D00BD596E /* LaunchScreen.storyboard */; };
 		142FE7C9295562FD006AAF73 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 142FE7C8295562FD006AAF73 /* SnapKit */; };
 		142FE7CB29556382006AAF73 /* RepositoryListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142FE7CA29556382006AAF73 /* RepositoryListTableViewCell.swift */; };
+		143938A92956ABEB002F5BFD /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143938A82956ABEB002F5BFD /* Repository.swift */; };
 		68EACC12C9BB88789C03A473 /* Pods_GitHubRepository.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D97EE64EC6436572005F980 /* Pods_GitHubRepository.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +30,7 @@
 		1431AC4E2954092300E74F2D /* Subjects.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Subjects.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		1431AC4F2954170000E74F2D /* FilterinngOperators.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = FilterinngOperators.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		1431AC5029542E1200E74F2D /* TransformingOperators.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = TransformingOperators.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		143938A82956ABEB002F5BFD /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		14438D9929555A3F00C2BC9C /* Observable.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Observable.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		144714C22951AFF300EDCACA /* Traits.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Traits.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		2D97EE64EC6436572005F980 /* Pods_GitHubRepository.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitHubRepository.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -86,6 +88,7 @@
 				140AD481294DE43D00BD596E /* Assets.xcassets */,
 				140AD483294DE43D00BD596E /* LaunchScreen.storyboard */,
 				140AD486294DE43D00BD596E /* Info.plist */,
+				143938A82956ABEB002F5BFD /* Repository.swift */,
 			);
 			path = GitHubRepository;
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 			files = (
 				140AD47D294DE43A00BD596E /* RepositoryListViewController.swift in Sources */,
 				142FE7CB29556382006AAF73 /* RepositoryListTableViewCell.swift in Sources */,
+				143938A92956ABEB002F5BFD /* Repository.swift in Sources */,
 				140AD479294DE43A00BD596E /* AppDelegate.swift in Sources */,
 				140AD47B294DE43A00BD596E /* SceneDelegate.swift in Sources */,
 			);
