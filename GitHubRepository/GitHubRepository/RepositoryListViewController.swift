@@ -99,7 +99,7 @@ extension RepositoryListViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "RepositoryListTableViewCell"), for: indexPath) as? RepositoryListTableViewCell else  { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "RepositoryListTableViewCell", for: indexPath) as? RepositoryListTableViewCell else  { return UITableViewCell() }
         
         return cell
     }
