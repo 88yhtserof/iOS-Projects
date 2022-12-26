@@ -14,6 +14,6 @@
 |![Simulator Screen Recording - iPhone 11 - 2022-08-28 at 16 29 34](https://user-images.githubusercontent.com/65601189/187063273-1d808584-f6bb-47a7-828f-a3b885640696.gif) | ![Simulator Screen Recording - iPhone 11 - 2022-09-17 at 16 24 42](https://user-images.githubusercontent.com/65601189/190845770-e78dc4f4-71f8-400d-a700-5f1478e20f79.gif) | ![Simulator Screen Recording - iPhone 11 - 2022-12-02 at 13 19 33](https://user-images.githubusercontent.com/65601189/205214412-b0f6652e-f650-40bd-b4f2-5b829704a95b.gif)|
 
 
-| 인스타그램 앱 |
-| ---- |
-|![Simulator Screen Recording - iPhone 11 - 2022-12-17 at 21 03 33](https://user-images.githubusercontent.com/65601189/208240934-bf9102dd-163e-4401-bf99-b8125aba9988.gif)|
+| 인스타그램 앱 | GitHub Repositories |
+| ---- | ---- |
+|![Simulator Screen Recording - iPhone 11 - 2022-12-17 at 21 03 33](https://user-images.githubusercontent.com/65601189/208240934-bf9102dd-163e-4401-bf99-b8125aba9988.gif)| ![Simulator Screen Recording - iPhone 11 - 2022-12-26 at 13 09 16](https://user-images.githubusercontent.com/65601189/209499483-b632ed80-64f8-4b2f-b287-9ebc07298184.gif)|
