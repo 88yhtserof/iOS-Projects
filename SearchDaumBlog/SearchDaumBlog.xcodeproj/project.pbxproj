@@ -14,6 +14,7 @@
 		1472C8F529595969009720B6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1472C8F329595969009720B6 /* LaunchScreen.storyboard */; };
 		14B4510C295D4D4E00FC83CC /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 14B4510B295D4D4E00FC83CC /* SnapKit */; };
 		14B4510F295D4D6100FC83CC /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 14B4510E295D4D6100FC83CC /* Kingfisher */; };
+		14B45111295D50B100FC83CC /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B45110295D50B100FC83CC /* SearchBar.swift */; };
 		323D753A3B735920B89081E3 /* Pods_SearchDaumBlog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD4F057DCC9E472DA591A96A /* Pods_SearchDaumBlog.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,7 @@
 		1472C8F429595969009720B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1472C8F629595969009720B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1472C8FD29595C5A009720B6 /* CombiningOperators.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = CombiningOperators.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		14B45110295D50B100FC83CC /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		8DA26C1B2CCBFBA25DD354AF /* Pods-SearchDaumBlog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SearchDaumBlog.debug.xcconfig"; path = "Target Support Files/Pods-SearchDaumBlog/Pods-SearchDaumBlog.debug.xcconfig"; sourceTree = "<group>"; };
 		B4FDA46BA1EF11361DD895D9 /* Pods-SearchDaumBlog.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SearchDaumBlog.release.xcconfig"; path = "Target Support Files/Pods-SearchDaumBlog/Pods-SearchDaumBlog.release.xcconfig"; sourceTree = "<group>"; };
 		CD4F057DCC9E472DA591A96A /* Pods_SearchDaumBlog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SearchDaumBlog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -71,6 +73,7 @@
 				1472C8E829595969009720B6 /* AppDelegate.swift */,
 				1472C8EA29595969009720B6 /* SceneDelegate.swift */,
 				1472C8EC29595969009720B6 /* MainViewController.swift */,
+				14B45110295D50B100FC83CC /* SearchBar.swift */,
 				1472C8F129595969009720B6 /* Assets.xcassets */,
 				1472C8F329595969009720B6 /* LaunchScreen.storyboard */,
 				1472C8F629595969009720B6 /* Info.plist */,
@@ -227,6 +230,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1472C8ED29595969009720B6 /* MainViewController.swift in Sources */,
+				14B45111295D50B100FC83CC /* SearchBar.swift in Sources */,
 				1472C8E929595969009720B6 /* AppDelegate.swift in Sources */,
 				1472C8EB29595969009720B6 /* SceneDelegate.swift in Sources */,
 			);
