@@ -101,11 +101,7 @@
 		14B45114295D62F300FC83CC /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				14B45112295D604500FC83CC /* FilterTableHeaderView.swift */,
-				14B45110295D50B100FC83CC /* SearchBar.swift */,
-				1472C8EC29595969009720B6 /* MainViewController.swift */,
-				14B45118295D644900FC83CC /* BlogListTableViewCell.swift */,
-				14B4511A295D69F400FC83CC /* BlogListUITableView.swift */,
+				14B4511F295D6DFB00FC83CC /* MainViewController */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -116,6 +112,50 @@
 				14B45116295D638600FC83CC /* BlogListCellData.swift */,
 			);
 			path = Entities;
+			sourceTree = "<group>";
+		};
+		14B4511C295D6D6400FC83CC /* BlogListSubComponents */ = {
+			isa = PBXGroup;
+			children = (
+				14B45112295D604500FC83CC /* FilterTableHeaderView.swift */,
+				14B45118295D644900FC83CC /* BlogListTableViewCell.swift */,
+			);
+			path = BlogListSubComponents;
+			sourceTree = "<group>";
+		};
+		14B4511D295D6D9800FC83CC /* BlogListView */ = {
+			isa = PBXGroup;
+			children = (
+				14B4511C295D6D6400FC83CC /* BlogListSubComponents */,
+				14B4511A295D69F400FC83CC /* BlogListUITableView.swift */,
+			);
+			path = BlogListView;
+			sourceTree = "<group>";
+		};
+		14B4511E295D6DBC00FC83CC /* SearchBar */ = {
+			isa = PBXGroup;
+			children = (
+				14B45110295D50B100FC83CC /* SearchBar.swift */,
+			);
+			path = SearchBar;
+			sourceTree = "<group>";
+		};
+		14B4511F295D6DFB00FC83CC /* MainViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1472C8EC29595969009720B6 /* MainViewController.swift */,
+				14B45120295D6E2300FC83CC /* MainSubComponents */,
+			);
+			path = MainViewController;
+			sourceTree = "<group>";
+		};
+		14B45120295D6E2300FC83CC /* MainSubComponents */ = {
+			isa = PBXGroup;
+			children = (
+				14B4511E295D6DBC00FC83CC /* SearchBar */,
+				14B4511D295D6D9800FC83CC /* BlogListView */,
+			);
+			path = MainSubComponents;
 			sourceTree = "<group>";
 		};
 		1CF6E7B004DF982DD28FA060 /* Pods */ = {
