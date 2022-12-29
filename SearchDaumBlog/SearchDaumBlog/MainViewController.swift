@@ -5,9 +5,10 @@
 //  Created by 임윤휘 on 2022/12/26.
 //
 
-import UIKit
+import RxSwift
+import RxCocoa
 
-class ViewController: UIViewController {
+class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
