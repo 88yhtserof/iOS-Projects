@@ -72,11 +72,10 @@
 		1472C8E729595969009720B6 /* SearchDaumBlog */ = {
 			isa = PBXGroup;
 			children = (
+				14B45115295D630800FC83CC /* Entities */,
+				14B45114295D62F300FC83CC /* Presentation */,
 				1472C8E829595969009720B6 /* AppDelegate.swift */,
 				1472C8EA29595969009720B6 /* SceneDelegate.swift */,
-				1472C8EC29595969009720B6 /* MainViewController.swift */,
-				14B45110295D50B100FC83CC /* SearchBar.swift */,
-				14B45112295D604500FC83CC /* FilterTableHeaderView.swift */,
 				1472C8F129595969009720B6 /* Assets.xcassets */,
 				1472C8F329595969009720B6 /* LaunchScreen.storyboard */,
 				1472C8F629595969009720B6 /* Info.plist */,
@@ -91,6 +90,23 @@
 				141AD8E0295C1BB10036D8AB /* TimeBasedOperators.playground */,
 			);
 			path = StudyRxSwift;
+			sourceTree = "<group>";
+		};
+		14B45114295D62F300FC83CC /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				14B45112295D604500FC83CC /* FilterTableHeaderView.swift */,
+				14B45110295D50B100FC83CC /* SearchBar.swift */,
+				1472C8EC29595969009720B6 /* MainViewController.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		14B45115295D630800FC83CC /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entities;
 			sourceTree = "<group>";
 		};
 		1CF6E7B004DF982DD28FA060 /* Pods */ = {
