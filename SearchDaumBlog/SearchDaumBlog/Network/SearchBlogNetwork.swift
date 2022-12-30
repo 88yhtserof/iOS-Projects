@@ -25,7 +25,7 @@ class SearchBlogNetwork {
     
     //Single은 성공 또는 에러를 단 한 번만 방출하는 옵져버블이다.
     //Result는 성공 또는 실패만 있는 Swift의 열거형이다. 경우에 따라 값을 전달할 수 있다.
-    static func searchBlog(query: String) -> Single<Result<DaumBlog, SearchNetworkError>>{
+    func searchBlog(query: String) -> Single<Result<DaumBlog, SearchNetworkError>>{
         guard let url = api.searchBlog(query: query).url else {
             return .just(.failure(.invalidURL))
         }
