@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		143CB56F295EC640004BBEE8 /* DaumBlog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143CB56E295EC640004BBEE8 /* DaumBlog.swift */; };
 		1472C8E929595969009720B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1472C8E829595969009720B6 /* AppDelegate.swift */; };
 		1472C8EB29595969009720B6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1472C8EA29595969009720B6 /* SceneDelegate.swift */; };
 		1472C8ED29595969009720B6 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1472C8EC29595969009720B6 /* MainViewController.swift */; };
@@ -25,6 +26,7 @@
 
 /* Begin PBXFileReference section */
 		141AD8E0295C1BB10036D8AB /* TimeBasedOperators.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = TimeBasedOperators.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		143CB56E295EC640004BBEE8 /* DaumBlog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaumBlog.swift; sourceTree = "<group>"; };
 		1472C8E529595969009720B6 /* SearchDaumBlog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SearchDaumBlog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1472C8E829595969009720B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1472C8EA29595969009720B6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 			children = (
 				14B45116295D638600FC83CC /* BlogListCellData.swift */,
 				14B45121295D77B600FC83CC /* AlertActionConvertible.swift */,
+				143CB56E295EC640004BBEE8 /* DaumBlog.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -304,6 +307,7 @@
 				14B45117295D638600FC83CC /* BlogListCellData.swift in Sources */,
 				14B45111295D50B100FC83CC /* SearchBar.swift in Sources */,
 				14B45119295D644900FC83CC /* BlogListTableViewCell.swift in Sources */,
+				143CB56F295EC640004BBEE8 /* DaumBlog.swift in Sources */,
 				14B45113295D604500FC83CC /* FilterTableHeaderView.swift in Sources */,
 				14B4511B295D69F400FC83CC /* BlogListUITableView.swift in Sources */,
 				1472C8E929595969009720B6 /* AppDelegate.swift in Sources */,
