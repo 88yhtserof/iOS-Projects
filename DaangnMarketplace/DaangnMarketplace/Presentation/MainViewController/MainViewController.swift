@@ -33,7 +33,7 @@ class MainViewController: UIViewController {
             .drive(tableView.rx.items) { tv, row, data in
                 switch row {
                 case 0 :
-                    let cell = tv.dequeueReusableCell(withIdentifier: "TitleTextFiledCell", for: IndexPath(row: row, section: 0)) as! TitleTextFiledCell
+                    let cell = tv.dequeueReusableCell(withIdentifier: "TitleTextFieldCell", for: IndexPath(row: row, section: 0)) as! TitleTextFieldCell
                     
                     cell.selectionStyle = .none
                     cell.titleInputField.placeholder = data
@@ -105,10 +105,10 @@ class MainViewController: UIViewController {
         tableView.separatorStyle = .singleLine
         tableView.tableFooterView = UIView() //tableView 하단에 cell이 없으면 footerView가 보여 구분선이 보이지 않도록
         
-        tableView.register(TitleTextFiledCell.self, forCellReuseIdentifier: "TitleTextFiledCell") //index row 0
-        tableView.register(TitleTextFiledCell.self, forCellReuseIdentifier: "CategorySelectCell") //index row 1
-        tableView.register(TitleTextFiledCell.self, forCellReuseIdentifier: "PriceTextFieldCell") //index row 2
-        tableView.register(TitleTextFiledCell.self, forCellReuseIdentifier: "DetailWriteFormCell") //index row 3
+        tableView.register(TitleTextFieldCell.self, forCellReuseIdentifier: "TitleTextFieldCell") //index row 0
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "CategorySelectCell") //index row 1
+        tableView.register(PriceTextFieldCell.self, forCellReuseIdentifier: "PriceTextFieldCell") //index row 2
+        tableView.register(DetailWriteFormCell.self, forCellReuseIdentifier: "DetailWriteFormCell") //index row 3
     }
     
     func layout() {

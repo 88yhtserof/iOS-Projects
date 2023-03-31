@@ -10,7 +10,7 @@ import SnapKit
 import RxSwift
 import RxCocoa
 
-class TitleTextFiledCell: UITableViewCell {
+class TitleTextFieldCell: UITableViewCell {
     let disposeBag = DisposeBag()
     
     let titleInputField = UITextField()
