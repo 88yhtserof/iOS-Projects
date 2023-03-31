@@ -15,13 +15,9 @@ class FilterTableHeaderView: UITableViewHeaderFooterView {
     let sortButton = UIButton()
     let bottomBorder = UIView()
     
-    //FilterView 외부에서 발산할 옵져버블
-    let sortButtonTapped = PublishRelay<Void>()
-    
     override init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
         
-        bind()
         attribute()
         layout()
     }
@@ -30,9 +26,9 @@ class FilterTableHeaderView: UITableViewHeaderFooterView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func bind() {
+    private func bind(_ viewModel: FilterViewModel) {
         sortButton.rx.tap
-            .bind(to: sortButtonTapped)
+            .bind(to: viewModel.sortButtonTapped)
             .disposed(by: disposeBag)
     }
     

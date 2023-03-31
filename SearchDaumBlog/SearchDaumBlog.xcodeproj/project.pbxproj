@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1421F45729D698FE0016B6F6 /* SearchBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1421F45629D698FE0016B6F6 /* SearchBarViewModel.swift */; };
+		1421F45929D69CDD0016B6F6 /* FilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1421F45829D69CDD0016B6F6 /* FilterViewModel.swift */; };
 		143CB56F295EC640004BBEE8 /* DaumBlog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143CB56E295EC640004BBEE8 /* DaumBlog.swift */; };
 		143CB571295ECD57004BBEE8 /* SearchBlogApl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143CB570295ECD57004BBEE8 /* SearchBlogApl.swift */; };
 		143CB574295ED133004BBEE8 /* SearchBlogNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143CB573295ED133004BBEE8 /* SearchBlogNetwork.swift */; };
@@ -30,6 +31,7 @@
 /* Begin PBXFileReference section */
 		141AD8E0295C1BB10036D8AB /* TimeBasedOperators.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = TimeBasedOperators.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		1421F45629D698FE0016B6F6 /* SearchBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarViewModel.swift; sourceTree = "<group>"; };
+		1421F45829D69CDD0016B6F6 /* FilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewModel.swift; sourceTree = "<group>"; };
 		143CB56E295EC640004BBEE8 /* DaumBlog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaumBlog.swift; sourceTree = "<group>"; };
 		143CB570295ECD57004BBEE8 /* SearchBlogApl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBlogApl.swift; sourceTree = "<group>"; };
 		143CB573295ED133004BBEE8 /* SearchBlogNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBlogNetwork.swift; sourceTree = "<group>"; };
@@ -66,6 +68,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1421F45A29D69CEB0016B6F6 /* FilterView */ = {
+			isa = PBXGroup;
+			children = (
+				14B45112295D604500FC83CC /* FilterTableHeaderView.swift */,
+				1421F45829D69CDD0016B6F6 /* FilterViewModel.swift */,
+			);
+			path = FilterView;
+			sourceTree = "<group>";
+		};
 		143CB572295ECD77004BBEE8 /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -139,7 +150,7 @@
 		14B4511C295D6D6400FC83CC /* BlogListSubComponents */ = {
 			isa = PBXGroup;
 			children = (
-				14B45112295D604500FC83CC /* FilterTableHeaderView.swift */,
+				1421F45A29D69CEB0016B6F6 /* FilterView */,
 				14B45118295D644900FC83CC /* BlogListTableViewCell.swift */,
 			);
 			path = BlogListSubComponents;
@@ -320,6 +331,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1421F45929D69CDD0016B6F6 /* FilterViewModel.swift in Sources */,
 				1472C8ED29595969009720B6 /* MainViewController.swift in Sources */,
 				14B45117295D638600FC83CC /* BlogListCellData.swift in Sources */,
 				14B45111295D50B100FC83CC /* SearchBar.swift in Sources */,
