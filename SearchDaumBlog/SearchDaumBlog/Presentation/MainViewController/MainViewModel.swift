@@ -10,6 +10,8 @@ import RxCocoa
 
 //MainView가 listView와 SearchBar를 가지고 있는 것처럼
 //MainViewModel도 똑같이 listViewModel과 SearchBarViewModel를 소유
+//순수한 비지니스 로직은 모델로 구분할 수 있으므로 복잡한 MainViewModel를 모델로 구분할 수 있다.
+//큰 흐름은 파악할 수 있되 구체적인 비지니스 로직은 모델을 통해 알 수 있도록 하여 가독성과 직관성을 높힌다
 struct MainViewModel {
     let disposeBag = DisposeBag()
     
@@ -20,47 +22,24 @@ struct MainViewModel {
     let alertActionTapped = PublishRelay<MainViewController.AlertAction>()
     let shouldPresentAlert: Signal<MainViewController.Alert>
     
-    init() {
+    init(model: MainModel = MainModel()) {
         //네트워크 로직은 View가 알 필요없다.
         //네트워크 연결하기
         let blogResult = searchBarViewModel.shouldLoadResult
-            .flatMapLatest { searchWord in
-                SearchBlogNetwork().searchBlog(query: searchWord)
-            }
+            .flatMapLatest(model.searchBlog)
             .share() //스트림을 여러 개 만드는 것이 아니라 공유할 것이기 때문에 share 연산자 사용
         
         //Result 타입은 성공과 실패 두 가지로 나뉜다. 따라서 map 연산자를 사용해 성공만 남도록 연산
         let blogValue = blogResult
-            .compactMap { data -> DaumBlog? in //여기서 data는 성공 실패 둘 다 있는 Result를 말한다.
-                guard case .success(let value) = data else {
-                    return nil
-                }
-                return value
-            }
+            .compactMap(model.getBlogValue)
         
         //에러 받기
         let blogError = blogResult
-            .compactMap { data -> String? in
-                guard case .failure(let error) = data else {
-                    return nil
-                }
-                return error.localizedDescription
-            }
+            .compactMap(model.getBlogError)
         
         //네트워크를 통해 가져온 값을 cellData로 변환
         let blogCellData = blogValue
-            .map { blog -> [BlogListCellData] in
-                return blog.documents
-                    .map { doc -> BlogListCellData in
-                        let thumbnailURL = URL(string: doc.thumbnail ?? "")
-                        return BlogListCellData(
-                            thumbnailURL: thumbnailURL,
-                            name: doc.name,
-                            title: doc.title,
-                            datetime: doc.datetime
-                        )
-                    }
-            }
+            .map(model.getBlogListCellData)
         
         //FilterView의 AlertSheet에서 선택된 타입
         let sortedType = alertActionTapped
@@ -78,17 +57,9 @@ struct MainViewModel {
         Observable
             .combineLatest( //가장 최근에 선택된 타입으로 정렬
                 sortedType,
-                blogCellData
-            ) { type, data -> [BlogListCellData] in
-                switch type {
-                case .title:
-                    return data.sorted { $0.title ?? "" < $1.title ?? "" }
-                case .dateTime:
-                    return data.sorted { $0.datetime ?? Date() > $1.datetime ?? Date() }
-                default:
-                    return data
-                }
-            }
+                blogCellData,
+                resultSelector: (model.sort) //두 가지 소스를 받아 다음과 같은 형태로 정렬해라
+            )
             .bind(to: blogListViewModel.blogCellData)
             .disposed(by: disposeBag)
         
