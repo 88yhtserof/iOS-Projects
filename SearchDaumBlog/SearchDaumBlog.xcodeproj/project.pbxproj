@@ -135,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				14B4511F295D6DFB00FC83CC /* MainViewController */,
+				14B45120295D6E2300FC83CC /* MainSubComponents */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -181,7 +182,6 @@
 			isa = PBXGroup;
 			children = (
 				1472C8EC29595969009720B6 /* MainViewController.swift */,
-				14B45120295D6E2300FC83CC /* MainSubComponents */,
 			);
 			path = MainViewController;
 			sourceTree = "<group>";
