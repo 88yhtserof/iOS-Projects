@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1421F45729D698FE0016B6F6 /* SearchBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1421F45629D698FE0016B6F6 /* SearchBarViewModel.swift */; };
+		1421F45929D69CDD0016B6F6 /* FilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1421F45829D69CDD0016B6F6 /* FilterViewModel.swift */; };
+		1421F45C29D69DEE0016B6F6 /* BlogListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1421F45B29D69DEE0016B6F6 /* BlogListViewModel.swift */; };
+		1421F46029D6A03D0016B6F6 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1421F45F29D6A03D0016B6F6 /* MainViewModel.swift */; };
+		1421F46229D6A8420016B6F6 /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1421F46129D6A8420016B6F6 /* MainModel.swift */; };
 		143CB56F295EC640004BBEE8 /* DaumBlog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143CB56E295EC640004BBEE8 /* DaumBlog.swift */; };
 		143CB571295ECD57004BBEE8 /* SearchBlogApl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143CB570295ECD57004BBEE8 /* SearchBlogApl.swift */; };
 		143CB574295ED133004BBEE8 /* SearchBlogNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143CB573295ED133004BBEE8 /* SearchBlogNetwork.swift */; };
@@ -28,6 +33,11 @@
 
 /* Begin PBXFileReference section */
 		141AD8E0295C1BB10036D8AB /* TimeBasedOperators.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = TimeBasedOperators.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		1421F45629D698FE0016B6F6 /* SearchBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarViewModel.swift; sourceTree = "<group>"; };
+		1421F45829D69CDD0016B6F6 /* FilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewModel.swift; sourceTree = "<group>"; };
+		1421F45B29D69DEE0016B6F6 /* BlogListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogListViewModel.swift; sourceTree = "<group>"; };
+		1421F45F29D6A03D0016B6F6 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		1421F46129D6A8420016B6F6 /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
 		143CB56E295EC640004BBEE8 /* DaumBlog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaumBlog.swift; sourceTree = "<group>"; };
 		143CB570295ECD57004BBEE8 /* SearchBlogApl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBlogApl.swift; sourceTree = "<group>"; };
 		143CB573295ED133004BBEE8 /* SearchBlogNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBlogNetwork.swift; sourceTree = "<group>"; };
@@ -64,6 +74,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1421F45A29D69CEB0016B6F6 /* FilterView */ = {
+			isa = PBXGroup;
+			children = (
+				14B45112295D604500FC83CC /* FilterTableHeaderView.swift */,
+				1421F45829D69CDD0016B6F6 /* FilterViewModel.swift */,
+			);
+			path = FilterView;
+			sourceTree = "<group>";
+		};
 		143CB572295ECD77004BBEE8 /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -120,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				14B4511F295D6DFB00FC83CC /* MainViewController */,
+				14B45120295D6E2300FC83CC /* MainSubComponents */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -137,7 +157,7 @@
 		14B4511C295D6D6400FC83CC /* BlogListSubComponents */ = {
 			isa = PBXGroup;
 			children = (
-				14B45112295D604500FC83CC /* FilterTableHeaderView.swift */,
+				1421F45A29D69CEB0016B6F6 /* FilterView */,
 				14B45118295D644900FC83CC /* BlogListTableViewCell.swift */,
 			);
 			path = BlogListSubComponents;
@@ -148,6 +168,7 @@
 			children = (
 				14B4511C295D6D6400FC83CC /* BlogListSubComponents */,
 				14B4511A295D69F400FC83CC /* BlogListUITableView.swift */,
+				1421F45B29D69DEE0016B6F6 /* BlogListViewModel.swift */,
 			);
 			path = BlogListView;
 			sourceTree = "<group>";
@@ -156,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				14B45110295D50B100FC83CC /* SearchBar.swift */,
+				1421F45629D698FE0016B6F6 /* SearchBarViewModel.swift */,
 			);
 			path = SearchBar;
 			sourceTree = "<group>";
@@ -164,7 +186,8 @@
 			isa = PBXGroup;
 			children = (
 				1472C8EC29595969009720B6 /* MainViewController.swift */,
-				14B45120295D6E2300FC83CC /* MainSubComponents */,
+				1421F45F29D6A03D0016B6F6 /* MainViewModel.swift */,
+				1421F46129D6A8420016B6F6 /* MainModel.swift */,
 			);
 			path = MainViewController;
 			sourceTree = "<group>";
@@ -317,18 +340,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1421F45929D69CDD0016B6F6 /* FilterViewModel.swift in Sources */,
 				1472C8ED29595969009720B6 /* MainViewController.swift in Sources */,
 				14B45117295D638600FC83CC /* BlogListCellData.swift in Sources */,
 				14B45111295D50B100FC83CC /* SearchBar.swift in Sources */,
 				14B45119295D644900FC83CC /* BlogListTableViewCell.swift in Sources */,
 				143CB56F295EC640004BBEE8 /* DaumBlog.swift in Sources */,
 				14B45113295D604500FC83CC /* FilterTableHeaderView.swift in Sources */,
+				1421F45C29D69DEE0016B6F6 /* BlogListViewModel.swift in Sources */,
 				143CB571295ECD57004BBEE8 /* SearchBlogApl.swift in Sources */,
 				14B4511B295D69F400FC83CC /* BlogListUITableView.swift in Sources */,
 				1472C8E929595969009720B6 /* AppDelegate.swift in Sources */,
+				1421F46229D6A8420016B6F6 /* MainModel.swift in Sources */,
 				1472C8EB29595969009720B6 /* SceneDelegate.swift in Sources */,
+				1421F45729D698FE0016B6F6 /* SearchBarViewModel.swift in Sources */,
 				143CB574295ED133004BBEE8 /* SearchBlogNetwork.swift in Sources */,
 				14B45122295D77B600FC83CC /* AlertActionConvertible.swift in Sources */,
+				1421F46029D6A03D0016B6F6 /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

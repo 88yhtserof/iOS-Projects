@@ -18,13 +18,9 @@ class BlogListUITableView: UITableView {
         )
     )
     
-    //MainViewController에서 네트워크 연결을 통해 데이터를 받아와 BlogListView에 뿌려주기
-    let cellData = PublishSubject<[BlogListCellData]>()
-    
     override init(frame: CGRect, style: UITableView.Style) {
         super.init(frame: frame, style: style)
         
-        bind()
         attribute()
         layout()
     }
@@ -33,9 +29,10 @@ class BlogListUITableView: UITableView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func bind() {
-        cellData
-            .asDriver(onErrorJustReturn: []) //만약 에러가 나면 빈 array 반환
+    func bind(_ viewModel: BlogListViewModel) {
+        headerView.bind(viewModel.filterViewModel)
+        
+        viewModel.cellData
             .drive(self.rx.items) { tableView, row, data in //items은 테이블 뷰 각각의 row에 element의 시퀀스를 바인딩한다.
                 let index = IndexPath(row: row, section: 0)
                 let cell = tableView.dequeueReusableCell(withIdentifier: "BlogListTableViewCell", for: index) as! BlogListTableViewCell
