@@ -45,6 +45,9 @@ class MainViewController: UIViewController {
         tableView.tableFooterView = UIView() //tableView 하단에 cell이 없으면 footerView가 보여 구분선이 보이지 않도록
         
         tableView.register(TitleTextFiledCell.self, forCellReuseIdentifier: "TitleTextFiledCell") //index row 0
+        tableView.register(TitleTextFiledCell.self, forCellReuseIdentifier: "CategorySelectCell") //index row 1
+        tableView.register(TitleTextFiledCell.self, forCellReuseIdentifier: "PriceTextFieldCell") //index row 2
+        tableView.register(TitleTextFiledCell.self, forCellReuseIdentifier: "DetailWriteFormCell") //index row 3
     }
     
     func layout() {
