@@ -28,7 +28,68 @@ class MainViewController: UIViewController {
     }
     
     func bind(_ viewModel: MainViewModel) {
+        //ViewModel -> View
+        viewModel.cellData
+            .drive(tableView.rx.items) { tv, row, data in
+                switch row {
+                case 0 :
+                    let cell = tv.dequeueReusableCell(withIdentifier: "TitleTextFiledCell", for: IndexPath(row: row, section: 0)) as! TitleTextFiledCell
+                    
+                    cell.selectionStyle = .none
+                    cell.titleInputField.placeholder = data
+                    cell.bind(viewModel.titleTextFieldCellViewModel)
+                    return cell
+                case 1:
+                    let cell = tv.dequeueReusableCell(withIdentifier: "CategorySelectCell", for: IndexPath(row: row, section: 0))
+                    
+                    var configuration = UIListContentConfiguration.cell()
+                    configuration.text = data
+                    
+                    cell.contentConfiguration = configuration
+                    cell.selectionStyle = .none
+                    cell.accessoryType = .disclosureIndicator //꺽새모양 설정
+                    return cell
+                case 2:
+                    let cell = tv.dequeueReusableCell(withIdentifier: "PriceTextFieldCell", for: IndexPath(row: row, section: 0)) as! PriceTextFieldCell
+                    
+                    cell.selectionStyle = .none
+                    cell.priceInputField.placeholder = data
+                    cell.bind(viewModel.priceTextFieldCellViewModel)
+                    return cell
+                case 3:
+                    let cell = tv.dequeueReusableCell(withIdentifier: "DetailWriteFormCell", for: IndexPath(row: row, section: 0)) as! DetailWriteFormCell
+                    
+                    cell.selectionStyle = .none
+                    cell.contentInputView.text = data
+                    cell.bind(viewModel.detailWriteFormCellViewModel)
+                    return cell
+                default:
+                    fatalError()
+                }
+            }
+            .disposed(by: disposeBag)
         
+        viewModel.presentAlert
+            .emit(to: self.rx.setAlert)
+            .disposed(by: disposeBag)
+        
+        viewModel.push
+            .drive(onNext: { viewModel in
+                let viewController = CategoryListViewController()
+                viewController.bind(viewModel)
+                self.show(viewController, sender: nil)
+            })
+            .disposed(by: disposeBag)
+        
+        //View -> ViewModel
+        tableView.rx.itemSelected
+            .map { $0.row }
+            .bind(to: viewModel.itemSelected)
+            .disposed(by: disposeBag)
+        
+        submitButton.rx.tap
+            .bind(to: viewModel.submitButtonTapped)
+            .disposed(by: disposeBag)
     }
     
     private func attribute() {
