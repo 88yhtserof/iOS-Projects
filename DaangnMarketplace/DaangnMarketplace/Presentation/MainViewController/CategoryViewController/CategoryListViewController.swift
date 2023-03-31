@@ -9,7 +9,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class CatergoryListViewController: UIViewController {
+class CategoryListViewController: UIViewController {
     let disposeBag = DisposeBag()
     let tableView = UITableView()
     
