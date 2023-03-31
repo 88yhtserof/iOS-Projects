@@ -30,6 +30,8 @@ class BlogListUITableView: UITableView {
     }
     
     func bind(_ viewModel: BlogListViewModel) {
+        headerView.bind(viewModel.filterViewModel)
+        
         viewModel.cellData
             .drive(self.rx.items) { tableView, row, data in //items은 테이블 뷰 각각의 row에 element의 시퀀스를 바인딩한다.
                 let index = IndexPath(row: row, section: 0)
