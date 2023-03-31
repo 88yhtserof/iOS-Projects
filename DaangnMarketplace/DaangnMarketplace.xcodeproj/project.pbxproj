@@ -24,6 +24,8 @@
 		1421F49E29D6F3030016B6F6 /* CategoryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1421F49D29D6F3030016B6F6 /* CategoryListViewController.swift */; };
 		1421F4A129D6F8FE0016B6F6 /* PriceTextFieldCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1421F4A029D6F8FE0016B6F6 /* PriceTextFieldCellViewModel.swift */; };
 		1421F4A329D6FB330016B6F6 /* PriceTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1421F4A229D6FB330016B6F6 /* PriceTextFieldCell.swift */; };
+		1421F4A629D70B2C0016B6F6 /* DetailWriteFormCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1421F4A529D70B2C0016B6F6 /* DetailWriteFormCell.swift */; };
+		1421F4A829D70B490016B6F6 /* DetailWriteFormCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1421F4A729D70B490016B6F6 /* DetailWriteFormCellViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		1421F49D29D6F3030016B6F6 /* CategoryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListViewController.swift; sourceTree = "<group>"; };
 		1421F4A029D6F8FE0016B6F6 /* PriceTextFieldCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceTextFieldCellViewModel.swift; sourceTree = "<group>"; };
 		1421F4A229D6FB330016B6F6 /* PriceTextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceTextFieldCell.swift; sourceTree = "<group>"; };
+		1421F4A529D70B2C0016B6F6 /* DetailWriteFormCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailWriteFormCell.swift; sourceTree = "<group>"; };
+		1421F4A729D70B490016B6F6 /* DetailWriteFormCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailWriteFormCellViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +101,7 @@
 				1421F49229D6BC020016B6F6 /* TitleTextFieldCell */,
 				1421F49F29D6F8930016B6F6 /* CategoryViewController */,
 				1421F4A429D6FFB60016B6F6 /* PriceTextFieldCell */,
+				1421F4A929D70B550016B6F6 /* DetailWriteFormCell */,
 			);
 			path = MainViewController;
 			sourceTree = "<group>";
@@ -142,6 +147,15 @@
 				1421F4A229D6FB330016B6F6 /* PriceTextFieldCell.swift */,
 			);
 			path = PriceTextFieldCell;
+			sourceTree = "<group>";
+		};
+		1421F4A929D70B550016B6F6 /* DetailWriteFormCell */ = {
+			isa = PBXGroup;
+			children = (
+				1421F4A529D70B2C0016B6F6 /* DetailWriteFormCell.swift */,
+				1421F4A729D70B490016B6F6 /* DetailWriteFormCellViewModel.swift */,
+			);
+			path = DetailWriteFormCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,9 +245,11 @@
 				1421F47229D6B2530016B6F6 /* SceneDelegate.swift in Sources */,
 				1421F48E29D6B34F0016B6F6 /* MainViewController.swift in Sources */,
 				1421F4A329D6FB330016B6F6 /* PriceTextFieldCell.swift in Sources */,
+				1421F4A829D70B490016B6F6 /* DetailWriteFormCellViewModel.swift in Sources */,
 				1421F49C29D6ECBB0016B6F6 /* CategoryViewModel.swift in Sources */,
 				1421F49429D6BC370016B6F6 /* TitleTextFieldCell.swift in Sources */,
 				1421F49029D6B45C0016B6F6 /* MainViewModel.swift in Sources */,
+				1421F4A629D70B2C0016B6F6 /* DetailWriteFormCell.swift in Sources */,
 				1421F49929D6EBD30016B6F6 /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
