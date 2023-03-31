@@ -19,6 +19,7 @@
 		1421F49029D6B45C0016B6F6 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1421F48F29D6B45C0016B6F6 /* MainViewModel.swift */; };
 		1421F49429D6BC370016B6F6 /* TitleTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1421F49329D6BC370016B6F6 /* TitleTextFieldCell.swift */; };
 		1421F49629D6BC560016B6F6 /* TitleTextFieldCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1421F49529D6BC560016B6F6 /* TitleTextFieldCellViewModel.swift */; };
+		1421F49929D6EBD30016B6F6 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1421F49829D6EBD30016B6F6 /* Category.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		1421F48F29D6B45C0016B6F6 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		1421F49329D6BC370016B6F6 /* TitleTextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleTextFieldCell.swift; sourceTree = "<group>"; };
 		1421F49529D6BC560016B6F6 /* TitleTextFieldCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleTextFieldCellViewModel.swift; sourceTree = "<group>"; };
+		1421F49829D6EBD30016B6F6 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 		1421F46E29D6B2530016B6F6 /* DaangnMarketplace */ = {
 			isa = PBXGroup;
 			children = (
+				1421F49729D6EBBC0016B6F6 /* Entity */,
 				1421F49129D6BBA50016B6F6 /* MainViewController */,
 				1421F46F29D6B2530016B6F6 /* AppDelegate.swift */,
 				1421F47129D6B2530016B6F6 /* SceneDelegate.swift */,
@@ -95,6 +98,14 @@
 				1421F49529D6BC560016B6F6 /* TitleTextFieldCellViewModel.swift */,
 			);
 			path = TitleTextFieldCell;
+			sourceTree = "<group>";
+		};
+		1421F49729D6EBBC0016B6F6 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				1421F49829D6EBD30016B6F6 /* Category.swift */,
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,6 +194,7 @@
 				1421F48E29D6B34F0016B6F6 /* MainViewController.swift in Sources */,
 				1421F49429D6BC370016B6F6 /* TitleTextFieldCell.swift in Sources */,
 				1421F49029D6B45C0016B6F6 /* MainViewModel.swift in Sources */,
+				1421F49929D6EBD30016B6F6 /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
